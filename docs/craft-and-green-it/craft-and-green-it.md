@@ -28,16 +28,33 @@ Mais après analyse, on se rend compte qu'on peut nuancer cette affirmation.
 
 ### Introduction 
 
-Le mouvement s'intéresse aux enjeux environnementaux liés au numérique en proposant des pratiques, technologies et stratégies. 
+Le mouvement s'intéresse aux enjeux environnementaux liés au numérique en proposant des pratiques, 
+technologies et stratégies. 
 
 - Eco-conception des équipements et de services numériques
 - Réemploi et recyclage
 - Bonnes pratiques
 
-### Statistiques
+Le numérique n’est pas immatériel, bien au contraire. Il est constitué d’ordinateurs,
+écrans, smartphones, de millions de kilomètres de câbles en cuivre et de fibres optiques,
+de milliers de centres informatiques, de milliards de chargeurs de téléphones, etc
 
+On découpe généralement le numérique en 3 tiers : les utilisateurs, les centres
+informatiques, et les réseaux qui relient les utilisateurs entre eux et aux centres
+informatiques
 
+### État actuel et statistiques
 
+Emissions de gaz à effet de serre qui vont augmenter de 2,2 % en 2010 à 5,5 % en 2025
+
+https://www.greenit.fr/wp-content/uploads/2019/10/2019-10-GREENIT-etude_EENM-rapport-accessible.VF_.pdf
+
+#### Effets 
+
+- épuisement des ressources abiotiques
+- tensions sur l’eau douce
+- agressions des écosystèmes (eutrophisation, acidification, pollutions diverses) contribuant à la régression écologique en cours.
+- fabrication des équipements présents chez les utilisateurs – TV connectés, ordinateurs, smartphones, box, etc. – qui concentrent de 59 % à 84 % des impacts
 
 ### Pratiques
 
