@@ -351,11 +351,11 @@ Cela peut être dû à :
 
 ## **E. Take away** -------------------
 
-| Libellé  | Url  | Login  |  Password |  
-|---|---|---|---|
-|   |   |   |   |
-|   |   |   |   |
-|   |   |   |   |
+| Libellé | Url | Login | Password |  
+|---------|-----|-------|----------|
+|         |     |       |          |
+|         |     |       |          |
+|         |     |       |          |
 
 ## Idées
 
