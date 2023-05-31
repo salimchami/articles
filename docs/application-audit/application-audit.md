@@ -2,13 +2,17 @@
 
 Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (15 mn de lecture).
 
-> **Mon Manager N+3 Laure**: "Salut ! dis, tu voudrais faire l'audit de code d'une application ?"  
-**Moi**: "Salut Laure ! quels problèmes ils ont ?"  
-**Laure**: "Je ne sais pas trop. Le PM m'a dit qu'ils avaient de gros problèmes de qualité de code... Je lui dis que t'es d'accord ?"  
-**Moi**: "Et bien, il faut que je me dégage du temps parce que là, je suis sur l'application X, je travaille aussi sur la scalabilité de l'application Y. D'ailleurs je crois qu'il y a un problème dans nos process de déploiement auto..."  
-**Laure**: "Oui... il faut qu'on en parle. Je t'envoie un mail avec Rémy le PM de l'application en copie ? Il t'enverra les infos !"  
+> **Mon Manager N+3 Laure** : "Salut ! tu voudrais faire l'audit de code d'une application ?"  
+**Moi** : "Salut Laure ! quels problèmes ils ont ?"  
+**Laure** : "Je ne sais pas trop.
+> Le PM m'a dit qu'ils avaient de gros problèmes de qualité de code...
+> Je lui dis que t'es d'accord ?"  
+**Moi** : "Et bien, il faut que je me dégage du temps parce que là, je suis sur l'application X, je travaille aussi sur la scalabilité de l'application Y. D'ailleurs, je crois qu'il y a un problème dans nos process de déploiement auto..."  
+**Laure**: "Oui... il faut qu'on en parle.
+> Je t'envoie un mail avec Rémy le PM de l'application en copie ?
+> Il t'enverra les infos !"  
 **Moi**: "Ok. avec plaisir."  
-**Laure**: "Merci, c'est sympa !"
+**Laure** : "Merci, c'est sympa !"
 
 Étant convaincu que j'allais faire un audit de code, une sorte de code review mais un peu plus long que d'habitude, je me suis mis à programmer une journée ou deux la semaine suivante pour le faire.
 
@@ -16,7 +20,7 @@ Le lendemain matin, j'ai reçu un mail de Léo le PO me présentant en deux phra
 
 Avec mon entrain habituel, je lui répondis quelques secondes après pour lui lister les actions nécessaires pour le réaliser :
 
-- L'objectif et la population cible de l'audit
+- L'objectif et la population cibles de l'audit
 - Le domaine métier avec une description succincte des principales fonctionnalités
 - Les cas d'utilisations des fonctionnalités les plus pertinentes
 - Accès Git
@@ -27,17 +31,32 @@ Avec mon entrain habituel, je lui répondis quelques secondes après pour lui li
 J'ai écrit ce mail en me disant que j'avais sûrement oublié quelque chose...
 Je me dis qu'il serait intéressant aussi que j'aie un entretien avec un tech.
 
->**Moi sur le chat de l'entreprise**: "Léo, s'il te plait, il faudrait aussi que je parle à un tech de l'équipe. Ne serait-ce que pour démarrer l'application en local."  
-**Léo**: "Ils ne sont pas au courant de l'audit. C'est assez compliqué..."  
-**Moi**: "Ah oui, il faudrait au moins en parler à une personne tech. Bon Ok. pas de problème. Merci!"
+>**Moi, sur le chat de l'entreprise** : "Léo, s'il te plait, il faudrait aussi que je parle à un tech de l'équipe.
+> Ne serait-ce que pour démarrer l'application en local."  
+**Léo** : "Ils ne sont pas au courant de l'audit.
+> C'est assez compliqué..."  
+**Moi**: "Ah oui, il faudrait au moins en parler à une personne tech.
+> Bon Ok. pas de problème.
+> Merci!"
 
 Je change d'onglet et contacte Rémy pour lui demander des explications supplémentaires.
 
->**Moi**: "Salut Rémy. Je voudrais s'il te plaît avoir plus d'infos à propos de l'audit. On m'a dit que je ne pouvais pas contacter l'équipe de dév. Je me demandais donc à qui il va être destiné ?"  
-**Rémy une heure après**: "Salut ! On voudrait transférer le projet à une autre équipe et comme, contractuellement, c'est difficile avec la société travaillant sur l'appli actuellement, il nous faudrait un audit pour rompre le contrat. Et une stratégie de remédiation aussi !"  
-**Moi dans mes pensées**: "Ah! Un audit sans parler à l'équipe de dév... Comme quand on interdit au développeur de contacter le PO..."
+>**Moi** : "Salut Rémy.
+> Je voudrais s'il te plaît avoir plus d'infos à propos de l'audit.
+> On m'a dit que je ne pouvais pas contacter l'équipe de dév.
+> Je me demandais donc à qui il va être destiné ?"  
+**Rémy une heure après** : "Salut !
+> On voudrait transférer le projet à une autre équipe et comme, contractuellement, c'est difficile avec la société travaillant sur l'appli actuellement, il nous faudrait un audit pour rompre le contrat.
+> Et une stratégie de remédiation aussi !"  
+**Moi, dans mes pensées** : "Ah !
+> Un audit sans parler à l'équipe de dév...
+> Comme quand on interdit au développeur de contacter le PO..."
 
-Cette fiction peut être bien réelle dans les entreprises. Les managers, les PM/PO considèrent le logiciel comme une boîte noire. Et en tant qu'auditeur, nous devons également les aider à éclaircir les processus de développement. Par ailleurs, si un audit est réalisé sur une application, l'équipe de dév devrait être la première dans la boucle, et doit avoir le recul nécessaire pour accepter cet audit. Si ce n'est elle qui en fait la demande.
+Cette fiction peut être bien réelle dans les entreprises.
+Les managers, les PM/PO considèrent le logiciel comme une boîte noire.
+Et en tant qu'auditeur, nous devons également les aider à éclaircir les processus de développement.
+Par ailleurs, si un audit est réalisé sur une application, l'équipe de dév devrait être la première dans la boucle, et doit avoir le recul nécessaire pour accepter cet audit.
+Si ce n'est-elle qui en fait la demande.
 
 Dans cet article, je vais tenter d'expliquer ce qu'est un audit applicatif en exposant tous les aspects devant être pris en compte pour le réaliser et pour écrire un compte rendu.
 
@@ -55,7 +74,8 @@ Comme dans notre fiction, plusieurs types de besoins amènent le client, les man
 - Trop de defects détectés même avant la mise en production
 - ...
 
-Ces causes vont nous permettre de déterminer l'objectif de l'audit et la population à laquelle il est destiné. Cependant, les demandeurs devraient être capable de déterminer cet objectif ce qui permettra une bonne coopération entre la personne auditrice, l'équipe de dév et les équipes managériales.
+Ces causes vont nous permettre de déterminer l'objectif de l'audit et la population à laquelle il est destiné.
+Cependant, les demandeurs devraient être capables de déterminer cet objectif ce qui permettra une bonne coopération entre la personne auditrice, l'équipe de dév et les équipes managériales.
 
 ## **A. Prérequis et supports utilisés**
 
@@ -63,9 +83,10 @@ Pour conduire notre audit, il est nécessaire d'avoir une série d'éléments à
 
 ### **1. Objectif**
 
-L'objectif de l'audit est un élément important car ils va nous permettre d'orienter les comptes rendus. Nous n'exposons pas de la même manière les problèmes techniques détectés à un développeur et à un manager qui méconnaît trop souvent les éléments mis en oeuvre lors du développement d'un service IT.
+L'objectif de l'audit est un élément important, car il va nous permettre d'orienter les comptes rendus.
+Nous n'exposons pas de la même manière les problèmes techniques détectés à un développeur et à un manager qui méconnaît trop souvent les éléments mis en œuvre lors du développement d'un service IT.
 
-Une liste d'objectifs possibles seraient une réponse naturelle aux éléments déclencheurs cités plus haut :
+Une liste d'objectifs possibles serait une réponse naturelle aux éléments déclencheurs cités plus haut :
 
 - Améliorer l'expérience utilisateur
 - Réduction des temps de changements (évolutions)
@@ -91,7 +112,8 @@ Le domaine métier est la pierre angulaire de notre audit. Un logiciel est cré�
 
 Une présentation succincte du domaine métier avec la liste des fonctionnalités principales/les plus critiques sous forme de cas d'utilisations est nécessaire.  
 Cela nous permet de réaliser une analyse de code toujours à partir de besoins fonctionnels.
-Dans le cas où des tests fonctionnels automatisés type Cucumber sont présents, nous pouvons omettre de demander ces cas d'utilisations. Ces tests doivent bien entendu couvrir l'ensemble des fonctionnalités ou à minima les fonctionnalités critiques.
+Dans le cas où des tests fonctionnels automatisés type Cucumber sont présents, nous pouvons omettre de demander ces cas d'utilisations.
+Ces tests doivent bien entendu couvrir l'ensemble des fonctionnalités ou au minimum les fonctionnalités critiques.
 
 ### **4. Accès dépôt de code source (Git)**
 
@@ -111,7 +133,7 @@ Les tests de charges nous permettent de disposer de cas d'utilisation et de mét
 Pour rappel, un test de charge est exécuté sur la back d'une application en faisant des appels d'API (REST par exemple).
 Il existe plusieurs types de tests et chaque cas d'utilisation peut être testé avec chacun de ces types.
 
-- Soak test : Test simple d'un cas d'utilisation avec un utilisateur faisant qu'un seul appel. Il permet de contrôler si l'application se dégrade avec le temps mais aussi si le cas d'utilisation fonctionne toujours.
+- Soak test : Test simple d'un cas d'utilisation avec un utilisateur faisant qu'un seul appel. Il permet de contrôler si l'application se dégrade avec le temps, mais aussi si le cas d'utilisation fonctionne toujours.
 - Stress tests : Test permettant d'augmenter soudainement la charge sur une api. Permet d'analyser le comportement de l'application lors d'un pic d'utilisation à un moment donné
 - Capacity tests : Test permettant d'analyser le comportement de l'application soumise à une charge en constante évolution.
 
@@ -121,7 +143,7 @@ Il existe plusieurs types de tableaux de bord de suivi. Il peut s'agir de board 
 
 #### **a. Rapport d'anomalies**
 
-Le rapport d'anomalies contient les status des tickets ouverts de type "Bug" et représentés en deux dimensions: La sévérité des tickets et leur statut.
+Le rapport d'anomalies contient les status des tickets ouverts de type "Bug" et représentés en deux dimensions : La sévérité des tickets et leur statut.
 
 ##### **Exemple de rapport d'anomalies**
 
@@ -133,13 +155,15 @@ Un des schémas faisant ressortir les thèmes récurrents présents sur les tick
 
 #### **c. Tickets créés vs. tickets résolus** et **Diagramme de flux cumulatifs**
 
-Le premier diagramme représente le volume des tickets "à faire" créés et les tickets résolus dans le temps. Il est donc intéressant d'y relever l'écart entre ces deux variables.
+Le premier diagramme représente le volume des tickets "à faire", créés et les tickets résolus dans le temps.
+Il est donc intéressant d'y relever l'écart entre ces deux variables.
 
 ##### **Exemple diagramme Tickets créés vs. tickets résolus**
 
 [![Tickets créés vs. tickets résolus](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)
 
-Le diagramme de flux cumulatifs est similaire au diagramme ci-avant mais peut contenir de multiples status de tickets supplémentaires. [Exemple ici](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-cumulative-flow-diagram/).
+Le diagramme de flux cumulatifs est similaire au diagramme ci-avant, mais peut contenir de multiples status de tickets supplémentaires.
+Exemple ici](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-cumulative-flow-diagram/).
 
 #### **d. Diagramme de contrôle**
 
@@ -162,9 +186,11 @@ Les métriques DORA aident à évaluer l'efficacité et la maturité des pratiqu
 - **Temps de rétablissement des services** : Mesure le temps moyen pour rétablir un service en cas d'incident.
 - **Taux d'échecs des changements** : Mesure la fréquence des échecs lors des déploiements.
 
-#### **g. Autre graphiques**
+#### **g. Autres graphiques**
 
-Les outils de suivi de projet permettent la génération d'une multitude de graphiques. Certains peuvent être ignorés car ceux cités ci-dessus suffisent. Par exemple, "un burn down chart" d'un seul sprint ne permettra pas de tirer des conclusions pertinentes sur le déroulement du développement car les estimations sont propres à chaque équipe à moins d'en superposer plusieurs en prenant en compte le contexte du projet.
+Les outils de suivi de projet permettent la génération d'une multitude de graphiques.
+Certains peuvent être ignorés, car ceux cités ci-dessus suffisent.
+Par exemple, "un burn down chart" d'un seul sprint ne permettra pas de tirer des conclusions pertinentes sur le déroulement du développement, parce que les estimations sont propres à chaque équipe à moins d'en superposer plusieurs en prenant en compte le contexte du projet.
 Les graphiques d'âge moyen des tickets et de la durée de résolution complétés par des boards de métriques DORA permettent en général d'arriver aux mêmes conclusions.
 
 ### **8. Documentation**
@@ -188,7 +214,8 @@ Il peut être utilisé, par exemple, lors de l'installation de l'application ou 
 
 ##### **Modèle de base de données**
 
-Le modèle de base de données est un document contenant la structure de la base de données (tables, relations, cardinalités, formes normales...). D'autres éléments sont nécessaires à l'analyse tels que les index, éventuellement les procédures stockées (si elles existent), et les séquences, les vues (et les requêtes de leur création).
+Le modèle de base de données est un document contenant la structure de la base de données (tables, relations, cardinalités, formes normales...).
+D'autres éléments sont nécessaires à l'analyse, tels que les index, éventuellement les procédures stockées (si elles existent), et les séquences, les vues (et les requêtes de leur création).
 
 ##### **Diagrammes UML (Unified Markup Language)**
 
@@ -200,13 +227,14 @@ Les ADR sont des enregistrements qui documentent les décisions d'architecture p
 
 #### **b. Documentation fonctionnelle**
 
-La documentation fonctionnelle contient l'ensemble des documents concernant le domaine métier de l'application. En voici quelques exemples:
+La documentation fonctionnelle contient l'ensemble des documents concernant le domaine métier de l'application.
+En voici quelques exemples :
 
 ##### **Documents présentation du domaine métier**
 
 Tout document présentant le périmètre fonctionnel de l'application est à prendre en compte lors de l'audit. Ces documents sont habituellement générés par l les PO, le métier ou les chefs de projets.
 
-De plus, les documents produits après des séances telles l'"Event storming" ou l'"Example mapping" sont intéressant à prendre en compte pour la compréhension du domaine métier et des fonctionnalités.
+De plus, les documents produits après des séances telles l'"Event storming" ou l'"Example mapping" sont intéressants à prendre en compte pour la compréhension du domaine métier et des fonctionnalités.
 
 ##### **Tests fonctionnels automatisés**
 
@@ -220,10 +248,10 @@ Les frameworks de tests unitaires et fonctionnels avec le format Gherkin (cf. [B
 
 Les tickets d'un board représentent un ensemble de tâches de plusieurs types (User story, bugs, task...) et peuvent avoir plusieurs statuts différents (TODO, WIP, DONE).
 
-Ces tickets, s'il sont bien écrits, peuvent être un source d'informations importante concernant les fonctionnalités présentes dans l'application.
+Ces tickets, s'ils ont bien écrit, peuvent être une source d'informations importante concernant les fonctionnalités présentes dans l'application.
 
 Un ticket bien écrit est un ticket écrit de façon INVEST (story indépendante, négociable, avec une vraie valeur, estimable, suffisamment petite et testable).
-Une story devrait contenir des critères d'acceptance contenant des exemples issus d'un "Example Mapping" (BDD).
+Une story devrait contenir des critères d'acceptation contenant des exemples issus d'un "Example Mapping" (BDD).
 
 ##### **Graphes d'états transitions fonctionnels**
 
@@ -236,7 +264,7 @@ Avec HATEOAS, il est possible de construire un diagramme d'états transitions re
 
 Le monitoring technique, s'il existe, peut fortement orienter l'analyse. Il contient, en effet, beaucoup d'informations sur le fonctionnement de l'application.
 
-Voici quelques uns des éléments exploitables dans l'audit et fournis par ces outils:
+Voici quelques-uns des éléments exploitables dans l'audit et fournis par ces outils :
 
 - Transactions HTTP
 - Requêtes de la base de données
@@ -249,7 +277,7 @@ Voici quelques uns des éléments exploitables dans l'audit et fournis par ces o
 
 ## **B. Analyse**
 
-Plusieurs plan d'analyse sont possibles selon les besoins mais le plan qui suit regroupe les principaux axes d'études.
+Plusieurs plans d'analyse sont possibles selon les besoins, mais le plan qui suit regroupe les principaux axes d'études.
 
 Notre phase d'étude peut donc se décomposer en deux grandes parties, une partie concernant l'organisation et la gestion de projet (Point 1), et une deuxième partie technique.
 
@@ -264,7 +292,7 @@ Un des objectifs supplémentaires sur lequel l'étude peut porter est l'impact e
 7. Performance de l'application
 8. Impact environnemental
 
-**N.B.** : Dans les parties ci-après, je ne parle principalement que de **points négatifs** mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les préconisations et le rapport car un audit n'est pas une activité qui.
+**N.B.** : Dans les parties ci-après, je ne parle principalement que de **points négatifs**, mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les préconisations et le rapport, car un audit n'est pas une activité qui.
 
 ### **1. Organisation et Time To Market (TTM)**
 
@@ -274,9 +302,11 @@ L'objectif du client étant de livrer un service au plus tôt et donc minimiser 
 
 Il est alors important de connaître le temps de mise sur le marché prévu et le temps réel (lead time) en fonction de l'organisation effective du développement.
 
-L'analyse de cette organisation est donc nécessaire afin de détecter certain points d'améliorations en fonction des objectifs. Il est utile également de relever les points positifs. Par exemple, si le TTM réel est celui qui est prévu par le métier ou les managers.
+L'analyse de cette organisation est donc nécessaire afin de détecter certains points d'améliorations en fonction des objectifs.
+Il est utile également de relever les points positifs.
+Par exemple, si le TTM réel est celui qui est prévu par le métier ou les managers.
 
-***A analyser*** :
+***À analyser*** :
 
 - Respect du TTM prévu et réel
 
@@ -285,37 +315,40 @@ L'analyse de cette organisation est donc nécessaire afin de détecter certain p
 Dans la majorité des équipes de développement, un board de gestion de tickets est utilisé. L'expression de besoin est souvent faite directement sur les tickets en respectant un certain formalisme tel que le langage [Gherkin](https://cucumber.io/docs/gherkin/reference/).
 Le point à relever est donc le respect systématique d'un format pour les tickets créés.
 
-Il est à relever également si les critères d'acceptance sont pertinents et formulés avec des exemples concrets.
+Il est à relever également si les critères d'acceptation sont pertinents et formulés avec des exemples concrets.
 
-Ces points sont importants car ils peuvent freiner ou ralentir le développement. En effet, des tickets mal conçus peuvent favoriser l'incompréhension des fonctionnalités par l'équipe de développement.
+Ces points sont importants, car ils peuvent freiner ou ralentir le développement.
+En effet, des tickets mal conçus peuvent favoriser l'incompréhension des fonctionnalités par l'équipe de développement.
 
-***A analyser*** :
+***À analyser*** :
 
-- Respect d'un formalisme lors de l'écriture de user stories
-- Exemples concrets dans les critères d'acceptance
+- Respect d'un formalisme lors de l'écriture de "user stories"
+- Exemples concrets dans les critères d'acceptation
 
 #### **c. Tableaux de bord de suivi**
 
 ##### **Analyse du Rapport d'anomalies**
 
-L'équipe de développement peut délivrer rapidement et régulièrement mais peut aussi faire face à de nombreux bugs détectés lors de l'utilisation de l'application.
+L'équipe de développement peut délivrer rapidement et régulièrement, mais peut aussi faire face à de nombreux bugs détectés lors de l'utilisation de l'application.
 
-Prenons l'exemple suivant avec un rapport d'anomalies sur une période de 12 mois. Si nous cherchons le nombre moyen de bug par jour, on obtiendrait 1104 / 220 = 5 bugs. Ce qui semble élevé.
+Prenons l'exemple suivant avec un rapport d'anomalies sur une période de 12 mois.
+Si nous cherchons le nombre moyen de bugs par jour, on obtiendrait 1104 / 220 = 5 bugs.
+Ce qui semble élevé.
 
 Le même calcul peut être fait pour chacun des types d'anomalies (Non résolu, résolu...).
 
 ![Rapport d'anomalies](bugs.png "Rapport d'anomalies")
 
-Un nombre moyen élevé de bugs signifie que la non régression n'est pas assurée, que l'application est non évolutive.
+Un nombre moyen élevé de bugs signifie que la non-régression n'est pas assurée, que l'application est non évolutive.
 Cela peut être dû à :
 
 - Manque de tests automatisés
 - Code complexe (Big ball of mud)
-- Méthodes de déploiements complexe
+- Méthodes de déploiements complexes
 - Dépendances/couplage internes à l'application (entre classes, modules...) ou avec d'autres applications
 - ...
 
-***A analyser*** :
+***À analyser*** :
 
 - Chaque statut séparément : par exemple le nombre d'anomalies non résolues
 - Lien entre les statuts : par exemple le ratio entre le nombre d'anomalies non résolues et résolues.
@@ -359,9 +392,9 @@ Cela peut être dû à :
 
 ## Idées
 
-Analyse de logs de l'application remontées sur Kibana par exemple
-Monitoring toujours coté back => donc faire attention aux frontaux
-(Il faut aussi des tests de charge pour detecter les erreurs cote front)
+Analyse de logs de l'application remontée sur Kibana par exemple
+Monitoring toujours coté back → donc faire attention aux frontaux
+(Il faut aussi des tests de charge pour détecter les erreurs cote front)
 
 - analyser Infra as code
 
