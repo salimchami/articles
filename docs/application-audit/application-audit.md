@@ -93,7 +93,7 @@ entre la personne auditrice, l'équipe de dév et les équipes managériales.
 
 Pour conduire notre audit, il est nécessaire d'avoir une série d'éléments à notre disposition.
 
-### 1. Objectif
+### A.1. Objectif
 
 L'objectif de l'audit est un élément important, car il va nous permettre d'orienter les comptes rendus.
 Nous n'exposons pas de la même manière les problèmes techniques détectés à un développeur et à un manager qui méconnaît
@@ -111,7 +111,7 @@ Une liste d'objectifs possibles serait une réponse naturelle aux éléments dé
 - Transfert de MOE (comme dans notre fiction)
 - ...
 
-### 2. Population cible
+### A.2. Population cible
 
 Outre l'objectif de l'audit, pour démarrer notre analyse, la connaissance de la population cible nous permet d'orienter
 la manière dont sont écrites les synthèses du rapport.
@@ -121,7 +121,7 @@ Cependant, l'analyse et les préconisations ne devront pas en être impactées.
 - Équipes de développement,
 - Clients (selon le type de l'entreprise et du projet).
 
-### 3. Domaine métier
+### A.3. Domaine métier
 
 Le domaine métier est la pierre angulaire de notre audit.
 Un logiciel est créé pour répondre à un besoin métier et nous ne devons pas le perdre de vue tout au long de l'audit.
@@ -133,20 +133,20 @@ Dans le cas où des tests fonctionnels automatisés type Cucumber sont présents
 d'utilisations.
 Ces tests doivent bien entendu couvrir l'ensemble des fonctionnalités ou au minimum les fonctionnalités critiques.
 
-### 4. Accès dépôt de code source (Git)
+### A.4. Accès dépôt de code source (Git)
 
 Le repository GIT permet d'avoir accès au code de l'application.
 
 Éventuellement, le repo peut contenir du code d'infrastructure qu'il est intéressant d'analyser.
 
-### 5. Accès CI/CD
+### A.5. Accès CI/CD
 
 L'accès à la chaîne d'intégration et/ou de déploiement continus est également nécessaire et permet d'analyser le
 processus de mise à disposition de l'application aux utilisateurs.
 
 Ainsi, ce sont les jobs de build, de déploiement et de tests, s'ils existent, qui peuvent être analysés.
 
-### 6. Tests de charge
+### A.6. Tests de charge
 
 Les tests de charges nous permettent de disposer de cas d'utilisation et de métriques de performance.
 Pour rappel, un test de charge est exécuté sur la back d'une application en faisant des appels d'API (REST par exemple).
@@ -160,7 +160,7 @@ Il existe plusieurs types de tests et chaque cas d'utilisation peut être testé
 - Capacity tests : Test permettant d'analyser le comportement de l'application soumise à une charge en constante
   évolution.
 
-### 7. Tableaux de bord de suivi
+### A.7. Tableaux de bord de suivi
 
 Il existe plusieurs types de tableaux de bord de suivi.
 Il peut s'agir de board Scrum, Kanban...
@@ -168,7 +168,7 @@ Ce sont les graphiques
 issus de ces boards qui sont intéressants et apportent des informations précieuses, car ils démontrent le déroulement du
 développement de l'application.
 
-#### a. Rapport d'anomalies
+#### A.7.a. Rapport d'anomalies
 
 Le rapport d'anomalies contient les status des tickets ouverts de type "Bug" et représentés en deux dimensions : La
 sévérité des tickets et leur statut.
@@ -177,12 +177,12 @@ sévérité des tickets et leur statut.
 
 ![Rapport d'anomalies](bugs.png "Rapport d'anomalies")
 
-#### b. Carte thermique
+#### A.7.b. Carte thermique
 
 Un des schémas faisant ressortir les thèmes récurrents présents sur les tickets est la carte thermique.
 Elle contient les mots-clés (étiquettes) les plus utilisés et donc les fonctionnalités les plus sensibles.
 
-#### c. Tickets créés vs. tickets résolus et Diagramme de flux cumulatifs
+#### A.7.c. Tickets créés vs. tickets résolus et Diagramme de flux cumulatifs
 
 Le premier diagramme représente le volume des tickets "à faire", créés et les tickets résolus dans le temps.
 Il est donc intéressant d'y relever l'écart entre ces deux variables.
@@ -195,7 +195,7 @@ Le diagramme de flux cumulatifs est similaire au diagramme ci-avant, mais peut c
 supplémentaires.
 Exemple ici](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-cumulative-flow-diagram/).
 
-#### d. Diagramme de contrôle
+#### A.7.d. Diagramme de contrôle
 
 Ce diagramme affiche la variabilité et la stabilité des délais de livraison des tâches.
 Il fournit des informations sur la performance de l'équipe et permet d'identifier les tendances.
@@ -206,7 +206,7 @@ Il fournit des informations sur la performance de l'équipe et permet d'identifi
 
 Il représente le lead time énoncé dans les métriques DORA.
 
-#### e. Métriques DORA
+#### A.7.e. Métriques DORA
 
 Si le projet tient un board de métriques DORA, il peut être très intéressant de l'analyser.
 
@@ -227,7 +227,7 @@ Il existe de nombreux outils pour mesurer ces métriques :
 - [Swarmia](https://swarmia.com/)
 - ...
 
-#### g. Autres graphiques
+#### A.7.f. Autres graphiques
 
 Les outils de suivi de projet permettent la génération d'une multitude de graphiques.
 Certains peuvent être ignorés, car ceux cités ci-dessus suffisent.
@@ -237,7 +237,7 @@ en prenant en compte le contexte du projet.
 Les graphiques d'âge moyen des tickets et de la durée de résolution complétés par des boards de métriques DORA
 permettent en général d'arriver aux mêmes conclusions.
 
-### 8. Documentation
+### A.8. Documentation
 
 Toute documentation qui permettrait d'apporter des informations sur le domaine métier et/ou les process technique est
 intéressante à prendre en compte.
@@ -245,7 +245,7 @@ L'absence de documentation n'est pas un point bloquant pour la réalisation de l
 
 La documentation peut donc contenir des informations techniques et fonctionnelles qu'il est primordial d'exploiter.
 
-#### a. Documentation technique
+#### A.8.a. Documentation technique
 
 La documentation technique contient l'ensemble des documents/articles techniques concernant le projet.
 Elle peut être
@@ -299,7 +299,7 @@ conséquences attendues.
 Les ADR servent de référence pour comprendre le contexte et les décisions prises tout au long du
 cycle de vie de l'application.
 
-#### b. Documentation fonctionnelle
+#### A.8.b. Documentation fonctionnelle
 
 La documentation fonctionnelle contient l'ensemble des documents concernant le domaine métier de l'application.
 En voici quelques exemples :
@@ -351,7 +351,7 @@ peut générer un diagramme d'états transitions pour représenter toutes les ac
 Avec HATEOAS, il est possible de construire un diagramme d'états transitions représentant tout le **workflow fonctionnel
 ** de l'application.
 
-### 9. Monitoring / Application Performance Management (APM)
+### A.9. Monitoring / Application Performance Management (APM)
 
 Le monitoring technique, s'il existe, peut fortement orienter l'analyse.
 Il contient, en effet, beaucoup d'informations sur le fonctionnement de l'application.
@@ -363,7 +363,7 @@ Voici quelques-uns des éléments exploitables dans l'audit et fournis par ces o
 - Gestion des ressources
 - ...
 
-### 10. Anciens rapports d'audits éventuels
+### A.10. Anciens rapports d'audits éventuels
 
 Éventuellement, l'application auditée peut déjà avoir fait l'objet d'un audit et dans ce cas, il est intéressant de le
 consulter pour en déduire l'évolution de l'application.
@@ -390,12 +390,12 @@ Un des objectifs supplémentaires sur lequel l'étude peut porter est l'impact e
 mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les
 préconisations et le rapport, car un audit est une photographie factuelle d'une application à un instant T.
 
-### 1. Organisation et Time To Market (TTM)
+### B.1. Organisation et Time To Market (TTM)
 
 L'objectif du client étant de livrer un service au plus tôt et donc minimiser le Time To Market, une organisation est
 établie pour produire ce service.
 
-#### a. TTM
+#### B.1.a. TTM
 
 Il est alors important de connaître le temps de mise sur le marché prévu et le temps réel (lead time) en fonction de
 l'organisation effective du développement.
@@ -409,7 +409,7 @@ Par exemple, si le TTM réel est celui qui est prévu par le métier ou les mana
 
 - Respect du TTM prévu et réel
 
-#### b. Expression du besoin
+#### B.1.b. Expression du besoin
 
 Dans la majorité des équipes de développement, un board de gestion de tickets est utilisé.
 L'expression de besoin est souvent faite directement sur les tickets en respectant un certain formalisme tel que le
@@ -426,7 +426,7 @@ En effet, des tickets mal conçus peuvent favoriser l'incompréhension des fonct
 - Respect d'un formalisme lors de l'écriture de "user stories"
 - Exemples concrets dans les critères d'acceptation
 
-#### c. Tableaux de bord de suivi
+#### B.1.c. Tableaux de bord de suivi
 
 ##### Analyse du Rapport d'anomalies
 
@@ -516,7 +516,7 @@ Cela permet également de réduire le temps de mise en production d'une nouvelle
 - Lien entre les métriques
 - Évolution des métriques
 
-#### Feedback des utilisateurs
+#### B.1.d. Feedback des utilisateurs
 
 Le feedback des utilisateurs est un indicateur important de la qualité de l'application.
 En effet, si les utilisateurs sont satisfaits de l'application, cela signifie que l'application répond à leurs besoins.
@@ -541,9 +541,9 @@ Il existe plusieurs moyens de récolter le feedback des utilisateurs :
 - Nombre de retours positifs/négatifs par canal (enquête, ticket, réseaux sociaux...)
 - ...
 
-### 2. Structure globale de l'application
+### B.2. Structure globale de l'application
 
-#### Modèle de base de données
+#### B.2.a. Modèle de base de données
 
 Il est important de modéliser correctement la base de données de l'application.
 Si un modèle de données est mal conçu, cela peut avoir un impact sur les performances et l'évolutivité de l'application.
@@ -565,7 +565,7 @@ Il est important également de vérifier le contenu des tables (types, index, cl
 - Les types de données sont bien définis.
 - Les champs obligatoires sont bien définis.
 
-#### Diagrammes UML
+#### B.2.b. Diagrammes UML
 
 S'il existe des diagrammes UML, il est important de les analyser.
 S'ils n'existent pas, il est possible de les générer à partir du code source.
@@ -578,7 +578,7 @@ Outre le diagramme de classes, un diagramme de séquence peut aussi faire ressor
 
 - Complexité des différents diagrammes UML de l'application
 
-#### Structure des modules de l'application
+#### B.2.c. Structure des modules de l'application
 
 Les modules de l'application sont les modules gérés par un gestionnaire de dépendances (Maven, Gradle, npm...).
 La structure des modules de l'application permet de détecter les dépendances entre les modules.
@@ -608,7 +608,7 @@ Il est possible donc qu'elle contienne des défauts de design.
 - Dépendances avec les plateformes de développement : En effet, le code source ne doit contenir aucun fichier de
   configuration relatif aux IDE.
 
-#### Structure des packages contenant les classes
+#### B.2.d. Structure des packages contenant les classes
 
 Les packages contenant les classes permettent de détecter les dépendances entre les classes.
 
@@ -623,7 +623,7 @@ En effet, l'arborescence des packages doit être cohérente avec les différents
 - Dépendances entre les packages et les librairies externes
 - ...
 
-### 3. Architecture fonctionnelle
+### B.3. Architecture fonctionnelle
 
 Il est nécessaire d'étudier le découpage des différents périmètres fonctionnels (Bounded contexts).
 
@@ -649,11 +649,11 @@ Les questions suivantes peuvent être posées :
 - Emplacement des applications dans les zones du réseau local (DMZ, LAN...)
 - ...
 
-### 4. Architecture technique
+### B.4. Architecture technique
 
 C'est le DAT et le DEX qui permettent l'analyse de l'architecture technique de l'application.
 
-#### Architecture globale
+#### B.4.a. Architecture globale
 
 La compréhension de l'architecture globale de l'application, y compris les composants principaux,
 leurs interactions et leurs dépendances, est essentielle.
@@ -667,7 +667,7 @@ du système et sa scalabilité.
 - Scalabilité en fonction de la volumétrie des données et du nombre d'utilisateurs
 - Code source de l'infrastructure (IaC)
 
-#### Configuration matérielle et logicielle
+#### B.4.b. Configuration matérielle et logicielle
 
 Il est nécessaire de vérifier si les spécifications matérielles et les versions des logiciels utilisés
 sont adéquates pour prendre en charge l'application.
@@ -680,7 +680,7 @@ L'optimisation des configurations et le respect des exigences de performance et 
 - Optimisation des configurations
 - Respect des exigences de performance et de sécurité
 
-#### Interfaces et protocoles
+#### B.4.c. Interfaces et protocoles
 
 L'évaluation porte sur les interfaces utilisées par l'application et les protocoles de communication.
 Il est important de s'assurer de leur normalisation, de leur sécurité et de leur documentation adéquate.
@@ -696,7 +696,7 @@ La protection des interfaces externes et la mise en place de contrôles d'accès
 - Protection des interfaces externes
 - Contrôles d'accès
 
-#### Sécurité
+#### B.4.d. Sécurité
 
 L'analyse se concentre sur les mesures de sécurité mises en place pour protéger l'application.
 La gestion des identités, les mécanismes d'authentification, les contrôles d'accès et la gestion
@@ -710,7 +710,7 @@ Les éventuelles faiblesses de sécurité sont identifiées et des recommandatio
 - Sécurisation des communications (SSL/TLS, "one way" ou "two ways" ?, autorités de certification, expiration...)
 - Gestion des vulnérabilités
 
-#### Gestion des configurations et des versions
+#### B.4.e. Gestion des configurations et des versions
 
 L'évaluation porte sur le processus de gestion des configurations et des versions des composants de l'application.
 Il est important de vérifier si les bonnes pratiques de contrôle de version sont suivies et si les changements
@@ -723,7 +723,7 @@ sont correctement documentés et tracés.
 - Vérification de présence de fichiers de configuration dans le code source, les binaires, les images Docker, les
   caches...
 
-#### Conformité réglementaire
+#### B.4.f. Conformité réglementaire
 
 Si l'application doit respecter des réglementations spécifiques (par exemple, RGPD, PCI DSS),
 il est essentiel de vérifier sa conformité à ces exigences.
@@ -734,7 +734,7 @@ Il convient de s'assurer que les mesures de sécurité et de protection des donn
 - Conformité aux réglementations spécifiques
 - Mesures de sécurité et de protection des données
 
-#### Documentation et maintenance
+#### B.4.g. Documentation et maintenance
 
 Enfin, il est important de vérifier si la documentation technique de l'application est complète et à jour.
 L'évaluation porte également sur la définition des processus d'installation, de maintenance et de support (DEX).
@@ -745,7 +745,7 @@ Les éventuelles lacunes dans la documentation ou les problèmes de maintenance 
 - MAJ de la Documentation technique
 - Processus d'installation, de maintenance et de support
 
-#### Scalabilité
+#### B.4.h. Scalabilité
 
 Il convient de vérifier si l'architecture logicielle est conçue pour être évolutive.
 Il faut analyser si elle peut gérer efficacement une augmentation de la charge,
@@ -757,9 +757,9 @@ en utilisant par exemple des techniques de mise en cache, de répartition de cha
 - Répartition de charge
 - scalabilité horizontale
 
-### 5. Architecture logicielle
+### B.5. Architecture logicielle
 
-#### Structure logicielle
+#### B.5.a. Structure logicielle
 
 Comme vu dans le paragraphe 2, la structure globale de l'application doit être évaluée,
 y compris les couches logicielles et leur organisation.
@@ -769,11 +769,12 @@ compréhensible.
 Il est nécessaire aussi de vérifier également si le type d'architecture choisi est bien respecté
 (Architecture en couches, hexagonale, ports & adapters, CQRS, Event Sourcing, ...).
 
-Dans le livre "*Clean Architecture*" de *Robert C. Martin*, plusieurs principes concernant les composants sont énoncés (Cohésion, couplage...).
+Dans le livre "*Clean Architecture*" de *Robert C. Martin*, plusieurs principes concernant les composants sont énoncés (
+Cohésion, couplage...).
 Il faut vérifier si ces principes sont respectés.
 
 Enfin, il est intéressant d'identifier le type de gestion des connexions (système ouvert ou fermé).
-Un système ouvert accepte toutes les connexions entrantes 
+Un système ouvert accepte toutes les connexions entrantes
 contrairement à un système fermé qui met des utilisateurs en attente si la charge devient trop élevée.
 
 ***À analyser*** :
@@ -785,7 +786,7 @@ contrairement à un système fermé qui met des utilisateurs en attente si la ch
 - Respect du type d'architecture choisi
 - Cohésion et couplage des composants
 
-#### Design patterns
+#### B.5.b. Design patterns
 
 Les design patterns utilisés dans l'architecture logicielle doivent être identifiés.
 Il convient de vérifier si ces modèles sont appropriés pour résoudre les problèmes spécifiques
@@ -797,7 +798,7 @@ des fonctionnalités de l'application et s'ils favorisent la maintenabilité et 
 - Appropriation des design patterns
 - Maintenabilité et réutilisabilité du code
 
-#### Communication entre composants
+#### B.5.c. Communication entre composants
 
 Les mécanismes de communication entre les différents composants de l'application, tels que les interfaces, les API et
 les services, doivent être analysés.
@@ -808,7 +809,7 @@ Il faut vérifier si la communication est bien définie, fiable et sécurisée.
 - Mécanismes de communication entre les composants
 - Définition, fiabilité et sécurité de la communication
 
-#### Gestion des données
+#### B.5.d. Gestion des données
 
 La façon dont les données sont gérées dans l'application doit être évaluée.
 Il est intéressant d'analyser les mécanismes d'accès aux données et les stratégies de persistance.
@@ -820,7 +821,7 @@ Il est intéressant d'analyser les mécanismes d'accès aux données et les stra
 - Sécurité des données
 - Gestion des transactions, erreurs, logs, caches, secrets, messages, événements, tâches asynchrones, jobs...
 
-#### Séparation des préoccupations
+#### B.5.e. Séparation des préoccupations
 
 Il est important d'analyser comment les différentes responsabilités fonctionnelles et non fonctionnelles sont séparées
 et
@@ -833,7 +834,7 @@ Il faut également vérifier si la logique métier est séparée de la logique d
 - Séparation de la logique métier et de la logique d'infrastructure
 - Cohésion et couplage
 
-#### Extensibilité
+#### B.5.f. Extensibilité
 
 Il convient d'évaluer si l'architecture logicielle permet l'ajout de nouvelles fonctionnalités ou de nouveaux composants
 de manière modulaire et sans impact sur les fonctionnalités existantes.
@@ -846,21 +847,22 @@ Il faut vérifier si l'architecture est flexible et ouverte à l'extension futur
 - Flexibilité
 - Ouverture à l'extension
 
-#### Tests
+#### B.5.g. Tests
 
 Les stratégies de test utilisées dans l'application doivent être évaluées.
 Il faut analyser si des tests unitaires, des tests d'intégration et des tests de performance sont mis en place.
 
-Types de tests : 
-  - Tests unitaires
-  - Tests d'intégration
-  - Tests de performance
-  - Tests de sécurité
-  - Tests e2e
-  - Tests de mutation (mutation testing)
-  - ...
+Types de tests :
 
-#### Documentation
+- Tests unitaires
+- Tests d'intégration
+- Tests de performance
+- Tests de sécurité
+- Tests e2e
+- Tests de mutation (mutation testing)
+- ...
+
+#### B.5.h. Documentation
 
 Il est important de vérifier si la documentation de l'architecture logicielle est complète et à jour.
 Il faut analyser si elle fournit des informations claires sur les choix d'architecture (ADR),
@@ -872,19 +874,80 @@ Il convient d'identifier les éventuelles lacunes dans la documentation et de re
 - Documentation de l'architecture logicielle (Diagrammes, ADR...)
 - Principaux composants et leur fonctionnement
 
-### 6. Qualité du code -------------------
+### B.6. Qualité du code
 
-### 7. Sécurité -------------------
+En filigrane de l'analyse du code, l'idéal est d'avoir comme référentiel les nombreux livres écrits à ce sujet.
+Le premier, et le plus connu, est celui de *Robert C. Martin* : "*Clean Code*".
+Je ne vais pas lister les différents éléments énoncés dans ces livres (naming, commentaires, couplage, tests...),
+mais plutôt les techniques à utiliser.
 
-### 8. Performance de l'application -------------------
+#### B.6.a. Analyse statique du code
 
-### 9. Impact environnemental -------------------
+Afin d'analyser la qualité du code, il est nécessaire d'utiliser, dans un premier temps, des outils d'analyse statique
+du code (SonarQube, outil intégré aux IDE...).
+
+Ce type d'analyse permet de détecter les code smells, les vulnérabilités de sécurité, la couverture par les tests, les
+duplications de code, les bugs potentiels, etc.
+
+Il est important d'exploiter les résultats de cette analyse, car ils facilitent l'écriture des recommandations.
+
+***À analyser*** :
+
+- Code smells
+- Vulnérabilités de sécurité
+- Couverture par les tests
+- Duplications de code
+- Bugs potentiels
+- ...
+
+#### B.6.b. Tests automatisés
+
+Encore maintenant, en 2023, de très nombreuses applications ne contiennent malheureusement pas ou peu de tests
+automatisés.
+Il est donc important d'analyser si des tests automatisés sont mis en place, correctement écrits, et s'ils sont
+suffisants (cf. [Tests](#B5g-tests)).
+
+***À analyser*** :
+
+- Présence, pertinence et qualité (INVEST) des tests automatisés
+
+#### B.6.c. Analyse dynamique du code
+
+Ensuite, il est intéressant d'analyser la qualité du code en utilisant des outils d'analyse dynamique (APM).
+Il existe de nombreux APM sur le marché et sont largement utilisés.
+
+Si ce n'est pas le cas, il est possible d'utiliser des outils open source, légers et simples d'utilisation.  
+Dans ce cas, il faut avoir connaissance des fonctionnalités à exécuter dans l'application (scénarios).
+
+L'idéal est l'exécution de tests de charge pour avoir des données suffisantes sur les APM.
+
+***À analyser*** :
+
+- Exploiter les statistiques d'un APM lors de l'exécution de l'application :
+    - Temps de réponse
+    - Durées d'exécution des méthodes, requêtes, transactions...
+    - Nombre de requêtes (base de données), erreurs, logs, messages, événements...
+
+Par exemple, il est intéressant de vérifier le nombre de requêtes SQL exécutées dans le cadre d'une transaction web.
+Parfois, une seule et même requête, produisant le même résultat final, peut être exécutée plusieurs fois.
+Cela devrait être détecté et remonté dans l'audit.
+
+### B.7. Sécurité
+
+### B.8. Performance de l'application -------------------
+
+cf. [Tests de charge](#A6-tests-de-charge)
+
+### B.9. Impact environnemental -------------------
 
 ## C. Préconisations -------------------
 
 ## D. Rapport -------------------
 
 ## E. Take away -------------------
+
+Tableau contenant le lien vers les outils utilisés pour l'audit (prérequis).  
+Vous pouvez le réutiliser et mettre vos propres informations (urls, chemin répertoire local, login, mot de passe...).
 
 | Libellé          | Url                                   | Local file Path                           | Login | Password |  
 |------------------|---------------------------------------|-------------------------------------------|-------|----------|
@@ -897,8 +960,10 @@ Il convient d'identifier les éventuelles lacunes dans la documentation et de re
 | Monitoring       |                                       |                                           |       |          |
 | APM              |                                       |                                           |       |          |
 | GIT              |                                       |                                           |       |          |
+| Logs             |                                       |                                           |       |          |
 
 ## TODO
+
 Analyse de logs de l'application (remontée sur Kibana par exemple)
 
 
