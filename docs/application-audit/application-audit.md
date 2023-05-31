@@ -1,4 +1,4 @@
-# **Audit d'application**
+# Audit d'application
 
 Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (15 mn de lecture).
 
@@ -68,7 +68,7 @@ Si ce n'est-elle qui en fait la demande.
 Dans cet article, je vais tenter d'expliquer ce qu'est un audit applicatif en exposant tous les aspects devant être pris
 en compte pour le réaliser et pour écrire un compte rendu.
 
-## **L'élément déclencheur**
+## L'élément déclencheur
 
 Comme dans notre fiction, plusieurs types de besoins amènent le client, les managers ou les équipes de développement à
 prendre la décision de réaliser un audit applicatif.
@@ -89,11 +89,11 @@ Ces causes vont nous permettre de déterminer l'objectif de l'audit et la popula
 Cependant, les demandeurs devraient être capables de déterminer cet objectif ce qui permettra une bonne coopération
 entre la personne auditrice, l'équipe de dév et les équipes managériales.
 
-## **A. Prérequis et supports utilisés**
+## A. Prérequis et supports utilisés
 
 Pour conduire notre audit, il est nécessaire d'avoir une série d'éléments à notre disposition.
 
-### **1. Objectif**
+### 1. Objectif
 
 L'objectif de l'audit est un élément important, car il va nous permettre d'orienter les comptes rendus.
 Nous n'exposons pas de la même manière les problèmes techniques détectés à un développeur et à un manager qui méconnaît
@@ -111,7 +111,7 @@ Une liste d'objectifs possibles serait une réponse naturelle aux éléments dé
 - Transfert de MOE (comme dans notre fiction)
 - ...
 
-### **2. Population cible**
+### 2. Population cible
 
 Outre l'objectif de l'audit, pour démarrer notre analyse, la connaissance de la population cible nous permet d'orienter
 la manière dont sont écrites les synthèses du rapport.
@@ -121,7 +121,7 @@ Cependant, l'analyse et les préconisations ne devront pas en être impactées.
 - Équipes de développement,
 - Clients (selon le type de l'entreprise et du projet).
 
-### **3. Domaine métier**
+### 3. Domaine métier
 
 Le domaine métier est la pierre angulaire de notre audit.
 Un logiciel est créé pour répondre à un besoin métier et nous ne devons pas le perdre de vue tout au long de l'audit.
@@ -133,32 +133,34 @@ Dans le cas où des tests fonctionnels automatisés type Cucumber sont présents
 d'utilisations.
 Ces tests doivent bien entendu couvrir l'ensemble des fonctionnalités ou au minimum les fonctionnalités critiques.
 
-### **4. Accès dépôt de code source (Git)**
+### 4. Accès dépôt de code source (Git)
 
 Le repository GIT permet d'avoir accès au code de l'application.
 
 Éventuellement, le repo peut contenir du code d'infrastructure qu'il est intéressant d'analyser.
 
-### **5. Accès CI/CD**
+### 5. Accès CI/CD
 
 L'accès à la chaîne d'intégration et/ou de déploiement continus est également nécessaire et permet d'analyser le
 processus de mise à disposition de l'application aux utilisateurs.
 
 Ainsi, ce sont les jobs de build, de déploiement et de tests, s'ils existent, qui peuvent être analysés.
 
-### **6. Tests de charge**
+### 6. Tests de charge
 
 Les tests de charges nous permettent de disposer de cas d'utilisation et de métriques de performance.
 Pour rappel, un test de charge est exécuté sur la back d'une application en faisant des appels d'API (REST par exemple).
 Il existe plusieurs types de tests et chaque cas d'utilisation peut être testé avec chacun de ces types.
 
 - Soak test : Test simple d'un cas d'utilisation avec un utilisateur faisant qu'un seul appel.
-  Il permet de contrôler si l'application se dégrade avec le temps, mais aussi si le cas d'utilisation fonctionne toujours.
-- Stress tests : Test permettant d'augmenter soudainement la charge sur une api. Permet d'analyser le comportement de l'application lors d'un pic d'utilisation à un moment donné
+  Il permet de contrôler si l'application se dégrade avec le temps, mais aussi si le cas d'utilisation fonctionne
+  toujours.
+- Stress tests : Test permettant d'augmenter soudainement la charge sur une api.
+  Permet d'analyser le comportement de l'application lors d'un pic d'utilisation à un moment donné
 - Capacity tests : Test permettant d'analyser le comportement de l'application soumise à une charge en constante
   évolution.
 
-### **7. Tableaux de bord de suivi**
+### 7. Tableaux de bord de suivi
 
 Il existe plusieurs types de tableaux de bord de suivi.
 Il peut s'agir de board Scrum, Kanban...
@@ -166,26 +168,26 @@ Ce sont les graphiques
 issus de ces boards qui sont intéressants et apportent des informations précieuses, car ils démontrent le déroulement du
 développement de l'application.
 
-#### **a. Rapport d'anomalies**
+#### a. Rapport d'anomalies
 
 Le rapport d'anomalies contient les status des tickets ouverts de type "Bug" et représentés en deux dimensions : La
 sévérité des tickets et leur statut.
 
-##### **Exemple de rapport d'anomalies**
+##### Exemple de rapport d'anomalies
 
 ![Rapport d'anomalies](bugs.png "Rapport d'anomalies")
 
-#### **b. Carte thermique**
+#### b. Carte thermique
 
 Un des schémas faisant ressortir les thèmes récurrents présents sur les tickets est la carte thermique.
 Elle contient les mots-clés (étiquettes) les plus utilisés et donc les fonctionnalités les plus sensibles.
 
-#### **c. Tickets créés vs. tickets résolus** et **Diagramme de flux cumulatifs**
+#### c. Tickets créés vs. tickets résolus et Diagramme de flux cumulatifs
 
 Le premier diagramme représente le volume des tickets "à faire", créés et les tickets résolus dans le temps.
 Il est donc intéressant d'y relever l'écart entre ces deux variables.
 
-##### **Exemple diagramme Tickets créés vs. tickets résolus**
+##### Exemple diagramme Tickets créés vs. tickets résolus
 
 [![Tickets créés vs. tickets résolus](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)
 
@@ -193,18 +195,18 @@ Le diagramme de flux cumulatifs est similaire au diagramme ci-avant, mais peut c
 supplémentaires.
 Exemple ici](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-cumulative-flow-diagram/).
 
-#### **d. Diagramme de contrôle**
+#### d. Diagramme de contrôle
 
 Ce diagramme affiche la variabilité et la stabilité des délais de livraison des tâches.
 Il fournit des informations sur la performance de l'équipe et permet d'identifier les tendances.
 
-##### **Exemple diagramme de contrôle**
+##### Exemple diagramme de contrôle
 
 [![Diagramme de contrôle](https://images.ctfassets.net/zsv3d0ugroxu/4lVomeGqrYp3CYMsoEMf7R/c0ed7163e923a6eb59be7772bb2f467e/screenshot_JSW_Classic_annotated_ControlChart)](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-control-chart/)
 
 Il représente le lead time énoncé dans les métriques DORA.
 
-#### **e. Métriques DORA**
+#### e. Métriques DORA
 
 Si le projet tient un board de métriques DORA, il peut être très intéressant de l'analyser.
 
@@ -225,7 +227,7 @@ Il existe de nombreux outils pour mesurer ces métriques :
 - [Swarmia](https://swarmia.com/)
 - ...
 
-#### **g. Autres graphiques**
+#### g. Autres graphiques
 
 Les outils de suivi de projet permettent la génération d'une multitude de graphiques.
 Certains peuvent être ignorés, car ceux cités ci-dessus suffisent.
@@ -235,7 +237,7 @@ en prenant en compte le contexte du projet.
 Les graphiques d'âge moyen des tickets et de la durée de résolution complétés par des boards de métriques DORA
 permettent en général d'arriver aux mêmes conclusions.
 
-### **8. Documentation**
+### 8. Documentation
 
 Toute documentation qui permettrait d'apporter des informations sur le domaine métier et/ou les process technique est
 intéressante à prendre en compte.
@@ -243,20 +245,29 @@ L'absence de documentation n'est pas un point bloquant pour la réalisation de l
 
 La documentation peut donc contenir des informations techniques et fonctionnelles qu'il est primordial d'exploiter.
 
-#### **a. Documentation technique**
+#### a. Documentation technique
 
 La documentation technique contient l'ensemble des documents/articles techniques concernant le projet.
 Elle peut être
 déclinée sous plusieurs formats.
 
-##### **Dossier d'architecture technique (DAT)**
+##### Dossier d'architecture technique (DAT)
 
 Le DAT est un document qui décrit en détail l'architecture technique d'une application, incluant les objectifs, la
 structure, les composants et les technologies utilisées.
-Il fournit une référence pour la conception, le développement
-et l'évolution du système.
+Il est essentiel à l'analyse de l'architecture technique.
 
-##### **Document d'exploitation (DEX)**
+En effet, il permet de détecter les dépendances entre les applications et les composants techniques,
+leur mode de communication, les flux de données, les types des applications communicants avec l'application auditée (
+web, batch, API...).
+
+Il contient également les informations relatives à l'infrastructure (serveurs, bases de données, zones réseaux...) et
+éventuellement des explications des principaux principes et décisions architecturales.
+
+En résumé, le DAT est une vue d'ensemble des principaux composants techniques du système.
+Il fournit une référence pour la conception, le développement et l'évolution du système.
+
+##### Document d'exploitation (DEX)
 
 Le DEX d'une application est un document qui fournit des informations essentielles sur l'utilisation, la configuration
 et la maintenance de l'application.
@@ -264,14 +275,14 @@ Il sert de guide pour les opérateurs, les administrateurs ou les utilisateurs f
 afin de les aider à comprendre et à exploiter correctement l'application.
 Il peut être utilisé, par exemple, lors de l'installation de l'application ou d'une reprise sur incident.
 
-##### **Modèle de base de données**
+##### Modèle de base de données
 
 Le modèle de base de données est un document contenant la structure de la base de données (tables, relations,
 cardinalités, formes normales...).
 D'autres éléments sont nécessaires à l'analyse, tels que les index, éventuellement les procédures stockées (si elles
 existent), et les séquences, les vues (et les requêtes de leur création).
 
-##### **Diagrammes UML (Unified Markup Language)**
+##### Diagrammes UML (Unified Markup Language)
 
 Les diagrammes UML sont des représentations visuelles utilisées pour modéliser un logiciel.
 Ils fournissent une vue
@@ -279,7 +290,7 @@ claire et concise des différentes parties et interactions d'un système.
 Le site officiel est le
 suivant : [uml.org](https://www.uml.org/)
 
-##### **Architecture Decision Records (ADR)**
+##### Architecture Decision Records (ADR)
 
 Les ADR sont des enregistrements qui documentent les décisions d'architecture prises lors du développement d'une
 application.
@@ -288,12 +299,12 @@ conséquences attendues.
 Les ADR servent de référence pour comprendre le contexte et les décisions prises tout au long du
 cycle de vie de l'application.
 
-#### **b. Documentation fonctionnelle**
+#### b. Documentation fonctionnelle
 
 La documentation fonctionnelle contient l'ensemble des documents concernant le domaine métier de l'application.
 En voici quelques exemples :
 
-##### **Documents présentation du domaine métier**
+##### Documents présentation du domaine métier
 
 Tout document présentant le périmètre fonctionnel de l'application est à prendre en compte lors de l'audit.
 Ces documents sont habituellement générés par l les PO, le métier ou les chefs de projets.
@@ -301,12 +312,13 @@ Ces documents sont habituellement générés par l les PO, le métier ou les che
 De plus, les documents produits après des séances telles l'"Event storming" ou l'"Example mapping" sont intéressants à
 prendre en compte pour la compréhension du domaine métier et des fonctionnalités.
 
-##### **Tests fonctionnels automatisés**
+##### Tests fonctionnels automatisés
 
 Les tests fonctionnels automatisés se concentrent principalement sur la validation de la couche métier de l'application,
 en vérifiant le bon fonctionnement des fonctionnalités et des scénarios métier.  
-Ils sont en effet effectués au niveau de la couche de services de l'application ou dans le domaine 
-(cf. [Architecture Hexagonale](https://beyondxscratch.com/fr/2018/09/11/architecture-hexagonale-le-guide-pratique-pour-une-clean-architecture/))
+Ils sont en effet effectués au niveau de la couche de services de l'application ou dans le domaine
+(cf.
+[Architecture Hexagonale](https://beyondxscratch.com/fr/2018/09/11/architecture-hexagonale-le-guide-pratique-pour-une-clean-architecture/))
 pour s'assurer que les différentes fonctionnalités sont correctement implémentées et répondent aux exigences métier.
 
 Il est possible d'utiliser plusieurs outils/frameworks pour implémenter ce type de tests :
@@ -314,7 +326,7 @@ Les frameworks de tests unitaires et fonctionnels avec le format Gherkin (
 cf.
 [BDD](https://beyondxscratch.com/2019/05/21/behavior-driven-development-from-scratch/)).
 
-##### **Tickets Board Agile**
+##### Tickets Board Agile
 
 Les tickets d'un board représentent un ensemble de tâches de plusieurs types (User story, bugs, task...) et peuvent
 avoir plusieurs statuts différents (TODO, WIP, DONE).
@@ -326,7 +338,7 @@ Un ticket bien écrit est un ticket écrit de façon INVEST (story indépendante
 estimable, suffisamment petite et testable).
 Une story devrait contenir des critères d'acceptation contenant des exemples issus d'un "Example Mapping" (BDD).
 
-##### **Graphes d'états transitions fonctionnels**
+##### Graphes d'états transitions fonctionnels
 
 Le métier ou les développeurs peuvent générer des graphes d'états transitions pour plusieurs notions métiers.
 Par exemple, dans une application de gestion de factures, la facture peut avoir plusieurs statuts possibles et donc un
@@ -334,12 +346,12 @@ graphe d'états transitions peut être produit pour représenter le workflow fon
 
 Par ailleurs, dans le cas où l'application contient une API REST et c'est [**HATEOAS
 **](https://martinfowler.com/articles/richardsonMaturityModel.html#level3) qui est utilisé, l'équipe de développement
-peut générer un diagramme d'états transitions pour représenter toutes les actions possibles depuis un objet json 
+peut générer un diagramme d'états transitions pour représenter toutes les actions possibles depuis un objet json
 (devenant un état dans le diagramme).  
 Avec HATEOAS, il est possible de construire un diagramme d'états transitions représentant tout le **workflow fonctionnel
 ** de l'application.
 
-### **9. Monitoring / Application Performance Management (APM)**
+### 9. Monitoring / Application Performance Management (APM)
 
 Le monitoring technique, s'il existe, peut fortement orienter l'analyse.
 Il contient, en effet, beaucoup d'informations sur le fonctionnement de l'application.
@@ -351,12 +363,12 @@ Voici quelques-uns des éléments exploitables dans l'audit et fournis par ces o
 - Gestion des ressources
 - ...
 
-### **10. Anciens rapports d'audits éventuels**
+### 10. Anciens rapports d'audits éventuels
 
 Éventuellement, l'application auditée peut déjà avoir fait l'objet d'un audit et dans ce cas, il est intéressant de le
 consulter pour en déduire l'évolution de l'application.
 
-## **B. Analyse**
+## B. Analyse
 
 Plusieurs plans d'analyse sont possibles selon les besoins, mais le plan qui suit regroupe les principaux axes d'études.
 
@@ -378,12 +390,12 @@ Un des objectifs supplémentaires sur lequel l'étude peut porter est l'impact e
 mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les
 préconisations et le rapport, car un audit est une photographie factuelle d'une application à un instant T.
 
-### **1. Organisation et Time To Market (TTM)**
+### 1. Organisation et Time To Market (TTM)
 
 L'objectif du client étant de livrer un service au plus tôt et donc minimiser le Time To Market, une organisation est
 établie pour produire ce service.
 
-#### **a. TTM**
+#### a. TTM
 
 Il est alors important de connaître le temps de mise sur le marché prévu et le temps réel (lead time) en fonction de
 l'organisation effective du développement.
@@ -397,7 +409,7 @@ Par exemple, si le TTM réel est celui qui est prévu par le métier ou les mana
 
 - Respect du TTM prévu et réel
 
-#### **b. Expression du besoin**
+#### b. Expression du besoin
 
 Dans la majorité des équipes de développement, un board de gestion de tickets est utilisé.
 L'expression de besoin est souvent faite directement sur les tickets en respectant un certain formalisme tel que le
@@ -414,9 +426,9 @@ En effet, des tickets mal conçus peuvent favoriser l'incompréhension des fonct
 - Respect d'un formalisme lors de l'écriture de "user stories"
 - Exemples concrets dans les critères d'acceptation
 
-#### **c. Tableaux de bord de suivi**
+#### c. Tableaux de bord de suivi
 
-##### **Analyse du Rapport d'anomalies**
+##### Analyse du Rapport d'anomalies
 
 L'équipe de développement peut délivrer rapidement et régulièrement, mais peut aussi faire face à de nombreux bugs
 détectés lors de l'utilisation de l'application.
@@ -444,7 +456,7 @@ Cela peut être dû à :
 - Lien entre les statuts : par exemple le ratio entre le nombre d'anomalies non résolues et résolues.
 - Le nombre moyen de bugs par jour
 
-##### **Analyse tickets créés vs. tickets résolus**
+##### Analyse tickets créés vs. tickets résolus
 
 [![Tickets créés vs. tickets résolus](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)
 
@@ -468,7 +480,7 @@ développement est très efficace même si le nombre de tickets à traiter augme
 - Écart entre la courbe des tickets créés et celle des tickets résolus
 - Linéarité des deux courbes peut être intéressante à analyser également
 
-##### **Analyse de diagrammed contrôle**
+##### Analyse de diagrammed contrôle
 
 [![Diagramme de contrôle](https://images.ctfassets.net/zsv3d0ugroxu/4lVomeGqrYp3CYMsoEMf7R/c0ed7163e923a6eb59be7772bb2f467e/screenshot_JSW_Classic_annotated_ControlChart)](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-control-chart/)
 
@@ -489,7 +501,7 @@ devrions voir une diminution du temps de traitement des tickets.
 - Temps moyen de traitement des tickets
 - Évolution du temps de traitement des tickets
 
-##### **Analyse de métriques DORA**
+##### Analyse de métriques DORA
 
 Les métriques DORA sont à analyser ensemble.
 En effet, une amélioration de l'une d'entre elles peut avoir un impact sur les autres.
@@ -504,7 +516,7 @@ Cela permet également de réduire le temps de mise en production d'une nouvelle
 - Lien entre les métriques
 - Évolution des métriques
 
-#### **Feedback des utilisateurs**
+#### Feedback des utilisateurs
 
 Le feedback des utilisateurs est un indicateur important de la qualité de l'application.
 En effet, si les utilisateurs sont satisfaits de l'application, cela signifie que l'application répond à leurs besoins.
@@ -529,9 +541,9 @@ Il existe plusieurs moyens de récolter le feedback des utilisateurs :
 - Nombre de retours positifs/négatifs par canal (enquête, ticket, réseaux sociaux...)
 - ...
 
-### **2. Structure globale de l'application**
+### 2. Structure globale de l'application
 
-#### **Modèle de base de données**
+#### Modèle de base de données
 
 Il est important de modéliser correctement la base de données de l'application.
 Si un modèle de données est mal conçu, cela peut avoir un impact sur les performances et l'évolutivité de l'application.
@@ -553,7 +565,7 @@ Il est important également de vérifier le contenu des tables (types, index, cl
 - Les types de données sont bien définis.
 - Les champs obligatoires sont bien définis.
 
-#### **Diagrammes UML**
+#### Diagrammes UML
 
 S'il existe des diagrammes UML, il est important de les analyser.
 S'ils n'existent pas, il est possible de les générer à partir du code source.
@@ -566,7 +578,7 @@ Outre le diagramme de classes, un diagramme de séquence peut aussi faire ressor
 
 - Complexité des différents diagrammes UML de l'application
 
-#### **Structure des modules de l'application**
+#### Structure des modules de l'application
 
 Les modules de l'application sont les modules gérés par un gestionnaire de dépendances (Maven, Gradle, npm...).
 La structure des modules de l'application permet de détecter les dépendances entre les modules.
@@ -596,7 +608,7 @@ Il est possible donc qu'elle contienne des défauts de design.
 - Dépendances avec les plateformes de développement : En effet, le code source ne doit contenir aucun fichier de
   configuration relatif aux IDE.
 
-#### **Structure des packages contenant les classes**
+#### Structure des packages contenant les classes
 
 Les packages contenant les classes permettent de détecter les dépendances entre les classes.
 
@@ -611,7 +623,7 @@ En effet, l'arborescence des packages doit être cohérente avec les différents
 - Dépendances entre les packages et les librairies externes
 - ...
 
-### **3. Architecture fonctionnelle**
+### 3. Architecture fonctionnelle
 
 Il est nécessaire d'étudier le découpage des différents périmètres fonctionnels (Bounded contexts).
 
@@ -637,28 +649,80 @@ Les questions suivantes peuvent être posées :
 - Emplacement des applications dans les zones du réseau local (DMZ, LAN...)
 - ...
 
-### **4. Architecture technique**
+### 4. Architecture technique
 
-Le DAT est essentiel à l'analyse de l'architecture technique. 
-En effet, il permet de détecter les dépendances entre les applications et les composants techniques, 
-leur mode de communication, les flux de données. 
+C'est le DAT qui permet l'analyse de l'architecture technique de l'application.
 
+Voici les axes d'analyse que vous pourriez utiliser :
 
-### **5. Architecture logicielle** -------------------
+#### Architecture globale
+
+La compréhension de l'architecture globale de l'application, y compris les composants principaux,
+leurs interactions et leurs dépendances, est essentielle.
+L'évaluation porte sur la conception de l'architecture, sa capacité à répondre aux besoins
+du système et sa scalabilité.
+
+#### Composants techniques
+
+Les descriptions détaillées des composants techniques de l'application sont examinées.
+Une analyse des fonctionnalités, des rôles et des responsabilités de chaque composant, est réalisée.
+Il convient de vérifier si les composants sont conformes aux meilleures pratiques et s'ils répondent
+aux besoins de l'application.
+
+#### Configuration matérielle et logicielle
+
+Il est nécessaire de vérifier si les spécifications matérielles et les versions des logiciels utilisés
+sont adéquates pour prendre en charge l'application.
+L'optimisation des configurations et le respect des exigences de performance et de sécurité doivent être assurés.
+
+#### Interfaces et protocoles
+
+L'évaluation porte sur les interfaces utilisées par l'application et les protocoles de communication.
+Il est important de s'assurer de leur normalisation, de leur sécurité et de leur documentation adéquate.
+La protection des interfaces externes et la mise en place de contrôles d'accès doivent être vérifiées.
+
+#### Sécurité
+
+L'analyse se concentre sur les mesures de sécurité mises en place pour protéger l'application.
+La gestion des identités, les mécanismes d'authentification, les contrôles d'accès et la gestion
+des vulnérabilités sont examinés.
+Les éventuelles faiblesses de sécurité sont identifiées et des recommandations d'amélioration sont formulées.
+
+#### Gestion des configurations et des versions
+
+L'évaluation porte sur le processus de gestion des configurations et des versions des composants de l'application.
+Il est important de vérifier si les bonnes pratiques de contrôle de version sont suivies et si les changements
+sont correctement documentés et tracés.
+
+#### Conformité réglementaire
+
+Si l'application doit respecter des réglementations spécifiques (par exemple, RGPD, PCI DSS),
+il est essentiel de vérifier sa conformité à ces exigences.
+Il convient de s'assurer que les mesures de sécurité et de protection des données sont adéquates.
+
+#### Documentation et maintenance
+
+Enfin, il est important de vérifier si la documentation de l'application est complète et à jour.
+L'évaluation porte également sur la définition des processus de maintenance et de support.
+Les éventuelles lacunes dans la documentation ou les problèmes de maintenance doivent être identifiés.
+
+### 5. Architecture logicielle -------------------
+
 ADR
-### **6. Qualité du code** -------------------
 
-### **7. Sécurité** -------------------
+### 6. Qualité du code -------------------
 
-### **8. Performance de l'application** -------------------
+### 7. Sécurité -------------------
 
-### **9. Impact environnemental** -------------------
+### 8. Performance de l'application -------------------
 
-## **C. Préconisations** -------------------
+### 9. Impact environnemental -------------------
 
-## **D. Rapport** -------------------
+## C. Préconisations -------------------
 
-## **E. Take away** -------------------
+## D. Rapport -------------------
+
+## E. Take away -------------------
 
 | Libellé          | Url                                   | Local file Path                           | Login | Password |  
 |------------------|---------------------------------------|-------------------------------------------|-------|----------|
