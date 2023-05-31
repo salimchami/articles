@@ -264,7 +264,7 @@ Un des objectifs supplémentaires sur lequel l'étude peut porter est l'impact e
 7. Performance de l'application
 8. Impact environnemental
 
-**N.B.** : Dans les parties ci-après, je ne parle principalement que de **points négatifs** mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les préconisations et le rapport car un audit n'est pas une activité qui .
+**N.B.** : Dans les parties ci-après, je ne parle principalement que de **points négatifs** mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les préconisations et le rapport car un audit n'est pas une activité qui.
 
 ### **1. Organisation et Time To Market (TTM)**
 
