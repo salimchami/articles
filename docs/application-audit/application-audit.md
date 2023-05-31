@@ -167,7 +167,8 @@ Exemple ici](https://support.atlassian.com/jira-software-cloud/docs/view-and-und
 
 #### **d. Diagramme de contrôle**
 
-Ce diagramme affiche la variabilité et la stabilité des délais de livraison des tâches. Il fournit des informations sur la performance de l'équipe et permet d'identifier les tendances.
+Ce diagramme affiche la variabilité et la stabilité des délais de livraison des tâches.
+Il fournit des informations sur la performance de l'équipe et permet d'identifier les tendances.
 
 ##### **Exemple diagramme de contrôle**
 
@@ -185,6 +186,13 @@ Les métriques DORA aident à évaluer l'efficacité et la maturité des pratiqu
 - **Délai de mise en production (lead time)** : Mesure le temps nécessaire pour passer du développement à la mise en production.
 - **Temps de rétablissement des services** : Mesure le temps moyen pour rétablir un service en cas d'incident.
 - **Taux d'échecs des changements** : Mesure la fréquence des échecs lors des déploiements.
+
+Il existe de nombreux outils pour mesurer ces métriques :
+    - [Jellyfish](https://jellyfish.co/)
+    - [Oobeya](https://www.oobeya.io/)
+    - [Linearb](https://www.linearb.io/)
+    - [Swarmia](https://swarmia.com/)
+    - ...
 
 #### **g. Autres graphiques**
 
@@ -358,13 +366,150 @@ Cela peut être dû à :
 
 [![Tickets créés vs. tickets résolus](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)](https://confluence.atlassian.com/jiracoreserver073/files/861257079/861257085/1/1481516778161/image2015-6-18+9%3A13%3A23.png)
 
+L'écart entre les tickets créés et les tickets résolus est un indicateur de la vélocité de l'équipe de développement.
+Il ne s'agit pas ici du nombre de points traités, mais bien du nombre de tickets.
+En effet, un ticket peut être très complexe et nécessiter beaucoup de points, mais un autre ticket peut être très simple et nécessiter peu de points.
+
+Dans le premier graphique, les deux courbes sont très proches, ce qui signifie que l'équipe de développement est très efficace.
+Dès qu'un ticket est créé, il est résolu rapidement.  
+
+Dans le deuxième graphique, la courbe de tickets créés est supérieure à celle des tickets résolus. 
+Cela signifie que l'équipe de développement n'est pas assez efficace et que le nombre de tickets à faire augmente.  
+
+A contrario, si la courbe des tickets résolus est supérieure à celle des tickets créés, cela signifie que l'équipe de développement est très efficace même si le nombre de tickets à traiter augmente.
+
+***À analyser*** :
+
+- Écart entre la courbe des tickets créés et celle des tickets résolus
+- Linéarité des deux courbes peut être intéressante à analyser également
+
 ##### **Analyse de diagrammed contrôle**
+
+[![Diagramme de contrôle](https://images.ctfassets.net/zsv3d0ugroxu/4lVomeGqrYp3CYMsoEMf7R/c0ed7163e923a6eb59be7772bb2f467e/screenshot_JSW_Classic_annotated_ControlChart)](https://support.atlassian.com/jira-software-cloud/docs/view-and-understand-the-control-chart/)
+
+Dans ce diagramme de contrôle, nous pouvons voir que le certains tickets sont traités en 40 jours. 
+Ce qui peut être considéré comme beaucoup trop long.
+Cela peut avoir plusieurs significations :
+- Besoin trop complexe ou non compris
+- Application/Architecture applicative non évolutive
+
+Ce diagramme permet également de mesurer l'effet d'un changement de la productivité de l'équipe de développement.
+Par exemple, si le code a été simplifié ou l'équipe de développement a amélioré sa méthode de développement, nous devrions voir une diminution du temps de traitement des tickets.
+
+
+***À analyser*** :
+
+- Présence de clusters de tickets
+- Temps moyen de traitement des tickets
+- Évolution du temps de traitement des tickets
 
 ##### **Analyse de métriques DORA**
 
-#### **Feedback des utilisateurs** -------------------
+Les métriques DORA sont à analyser ensemble.
+En effet, une amélioration de l'une d'entre elles peut avoir un impact sur les autres.
 
-### **2. Structure globale de l'application** -------------------
+Les équipes performantes ont un temps de déploiement plus court, ce qui permet de réduire le temps de réaction en cas d'anomalie.
+Cela permet également de réduire le temps de mise en production d'une nouvelle fonctionnalité.
+
+***À analyser*** :
+
+- Chaque métrique séparément
+- Lien entre les métriques
+- Évolution des métriques
+
+#### **Feedback des utilisateurs**
+
+Le feedback des utilisateurs est un indicateur important de la qualité de l'application.
+En effet, si les utilisateurs sont satisfaits de l'application, cela signifie que l'application répond à leurs besoins.
+Le feedback des utilisateurs permet, lors de l'analyse, de détecter les besoins fonctionnels de l'application posant un problème. 
+
+Il existe plusieurs moyens de récolter le feedback des utilisateurs :
+
+- Enquêtes de satisfaction
+- Analyse des tickets utilisateurs
+- Analyse des commentaires sur les stores (Google Play, App Store...)
+- Analyse des commentaires sur les réseaux sociaux (publiques, d'entreprise...)
+- ...
+
+***À analyser*** :
+
+- Retours positifs ou négatifs des utilisateurs
+- Nombre de retours positifs/négatifs
+- Nombre de retours positifs/négatifs par fonctionnalité
+- Nombre de retours positifs/négatifs par version de l'application
+- Nombre de retours positifs/négatifs par type d'utilisateur (client, administrateur, support...)
+- Nombre de retours positifs/négatifs par canal (enquête, ticket, réseaux sociaux...)
+- ...
+
+### **2. Structure globale de l'application**
+
+#### **Modèle de base de données**
+
+Il est important de modéliser correctement la base de données de l'application.
+Si un modèle de données est mal conçu, cela peut avoir un impact sur les performances et l'évolutivité de l'application.
+
+Le modèle de données doit être le plus simple possible et ne doit pas contenir de redondance fonctionnelle.
+
+Pour cela, il est possible de vérifier les formes normales.  
+Plus le modèle de données est normalisé, plus il est simple et évolutif.
+Si le modèle est dénormalisé, il est possible que ce soit fait intentionnellement pour des raisons de performance.
+
+Il est important également de vérifier le contenu des tables (types, index, clés primaires et étrangères...).
+
+***À analyser*** :
+
+- Formes normales
+- Les clés primaires et étrangères sont bien définies.
+- Les index sont bien définis.
+- Les contraintes d'intégrité sont bien définies.
+- Les types de données sont bien définis.
+- Les champs obligatoires sont bien définis.
+
+#### **Diagrammes UML**
+
+S'il existe des diagrammes UML, il est important de les analyser.
+S'ils n'existent pas, il est possible de les générer à partir du code source.
+
+Si, par exemple, un diagramme de classes contient un nombre important de classes, cela peut signifier que le code est complexe et difficile à maintenir.
+Outre le diagramme de classes, un diagramme de séquence peut aussi faire ressortir des problèmes de design.
+
+***À analyser*** :
+
+- Complexité des différents diagrammes UML de l'application
+
+#### **Structure des modules de l'application**
+
+Les modules de l'application sont les modules gérés par un gestionnaire de dépendances (Maven, Gradle, npm...).
+La structure des modules de l'application permet de détecter les dépendances entre les modules.
+Un diagramme de dépendances peut être généré à partir de la structure des modules.
+
+Si de nombreuses dépendances existent entre les modules, cela peut signifier que l'application est peu évolutive.
+
+Exemple de diagrammes présentant des interdépendances entre les modules d'une application : 
+
+![modules-dependencies.png](modules-dependencies.png)
+
+L'application contient beaucoup trop de modules.
+Elle contient même des modules orphelins.  
+Il est possible donc qu'elle contienne des défauts de design.
+ 
+***À analyser*** :
+
+- Nombre de modules
+- Dépendances entre les modules : dépendances techniques et fonctionnelles
+- Dépendances cycliques entre les modules
+- Dépendances bidirectionnelles entre les modules : Techniquement impossible, mais des modules peuvent s'appeler mutuellement par des web services.
+- Dépendances entre les modules et les librairies externes 
+- Dépendances entre les modules et les bases de données
+- Dépendances entre les modules et les fichiers de configuration
+- Dépendances entre les modules et les ressources (images, vidéos, fichiers de traduction...)
+
+#### **Structure des packages contenant les classes**
+
+
+
+#### **Structure des classes**
+
 
 ### **3. Architecture technique** -------------------
 
