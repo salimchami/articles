@@ -1,6 +1,6 @@
 # Audit d'application
 
-Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (15 mn de lecture).
+Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (30 mn de lecture).
 
 > **Mon Manager N+3 Laure** : "Salut ! tu voudrais faire l'audit de code d'une application ?"  
 **Moi** : "Salut Laure ! quels problèmes ils ont ?"  
@@ -665,6 +665,7 @@ du système et sa scalabilité.
 - Type d'architecture : monolithique, microservices, n-tiers, SOA, EDA...
 - Interactions et dépendances entre les composants
 - Scalabilité en fonction de la volumétrie des données et du nombre d'utilisateurs
+- Code source de l'infrastructure (IaC)
 
 #### Configuration matérielle et logicielle
 
@@ -765,8 +766,15 @@ y compris les couches logicielles et leur organisation.
 Il faut analyser si la structure correspond au découpage fonctionnel et si elle est modulaire et facilement
 compréhensible.
 
-De plus, vérifier si le type d'architecture choisi est bien respecté
+Il est nécessaire aussi de vérifier également si le type d'architecture choisi est bien respecté
 (Architecture en couches, hexagonale, ports & adapters, CQRS, Event Sourcing, ...).
+
+Dans le livre "*Clean Architecture*" de *Robert C. Martin*, plusieurs principes concernant les composants sont énoncés (Cohésion, couplage...).
+Il faut vérifier si ces principes sont respectés.
+
+Enfin, il est intéressant d'identifier le type de gestion des connexions (système ouvert ou fermé).
+Un système ouvert accepte toutes les connexions entrantes 
+contrairement à un système fermé qui met des utilisateurs en attente si la charge devient trop élevée.
 
 ***À analyser*** :
 
@@ -775,6 +783,7 @@ De plus, vérifier si le type d'architecture choisi est bien respecté
 - Modularité
 - Facilité de compréhension
 - Respect du type d'architecture choisi
+- Cohésion et couplage des composants
 
 #### Design patterns
 
@@ -805,6 +814,7 @@ La façon dont les données sont gérées dans l'application doit être évalué
 Il est intéressant d'analyser les mécanismes d'accès aux données et les stratégies de persistance.
 
 ***À analyser*** :
+
 - Mécanismes d'accès aux données
 - Stratégies de persistance
 - Sécurité des données
@@ -812,12 +822,13 @@ Il est intéressant d'analyser les mécanismes d'accès aux données et les stra
 
 #### Séparation des préoccupations
 
-Il est important d'analyser comment les différentes responsabilités fonctionnelles et non fonctionnelles sont séparées et
+Il est important d'analyser comment les différentes responsabilités fonctionnelles et non fonctionnelles sont séparées
+et
 gérées dans l'application.
 Il faut également vérifier si la logique métier est séparée de la logique d'infrastructure (API, frameworks...).
 
 ***À analyser*** :
- 
+
 - Séparation et définition des responsabilités
 - Séparation de la logique métier et de la logique d'infrastructure
 - Cohésion et couplage
@@ -828,25 +839,38 @@ Il convient d'évaluer si l'architecture logicielle permet l'ajout de nouvelles 
 de manière modulaire et sans impact sur les fonctionnalités existantes.
 Il faut vérifier si l'architecture est flexible et ouverte à l'extension future.
 
-#### Qualité du code
+***À analyser*** :
 
-La qualité du code source de l'application doit être analysée.
-Il faut vérifier si les bonnes pratiques de programmation sont suivies, telles que la lisibilité, la maintenabilité,
-la modularité et l'efficacité.
-Il convient d'identifier les éventuelles violations de ces pratiques et de recommander des améliorations.
+- Possibilité d'ajout de nouvelles fonctionnalités ou de nouveaux composants (évolutivité)
+- Modularité
+- Flexibilité
+- Ouverture à l'extension
 
-#### Tests et débogage
+#### Tests
 
-Les stratégies de test et de débogage utilisées dans l'architecture logicielle doivent être évaluées.
+Les stratégies de test utilisées dans l'application doivent être évaluées.
 Il faut analyser si des tests unitaires, des tests d'intégration et des tests de performance sont mis en place.
-Il convient de vérifier si des outils de débogage sont disponibles pour faciliter la résolution des problèmes.
+
+Types de tests : 
+  - Tests unitaires
+  - Tests d'intégration
+  - Tests de performance
+  - Tests de sécurité
+  - Tests e2e
+  - Tests de mutation (mutation testing)
+  - ...
 
 #### Documentation
 
 Il est important de vérifier si la documentation de l'architecture logicielle est complète et à jour.
-Il faut analyser si elle fournit des informations claires sur les choix d'architecture,
+Il faut analyser si elle fournit des informations claires sur les choix d'architecture (ADR),
 les principaux composants et leur fonctionnement.
 Il convient d'identifier les éventuelles lacunes dans la documentation et de recommander des améliorations.
+
+***À analyser*** :
+
+- Documentation de l'architecture logicielle (Diagrammes, ADR...)
+- Principaux composants et leur fonctionnement
 
 ### 6. Qualité du code -------------------
 
@@ -864,7 +888,7 @@ Il convient d'identifier les éventuelles lacunes dans la documentation et de re
 
 | Libellé          | Url                                   | Local file Path                           | Login | Password |  
 |------------------|---------------------------------------|-------------------------------------------|-------|----------|
-| JIRA             |                                       |                                           |       |          |
+| Gestion Tickets  |                                       |                                           |       |          |
 | Wiki             | ex: https://mycompany.com/wiki        | X                                         |       |          |
 | DAT              | ex: https://mycompany.com/project/dat | ex: /home/me/project/architecture/DAT.pdf |       |          |
 | DEX              |                                       |                                           |       |          |
@@ -874,16 +898,9 @@ Il convient d'identifier les éventuelles lacunes dans la documentation et de re
 | APM              |                                       |                                           |       |          |
 | GIT              |                                       |                                           |       |          |
 
-## Idées
+## TODO
+Analyse de logs de l'application (remontée sur Kibana par exemple)
 
-Analyse de logs de l'application remontée sur Kibana par exemple
-Monitoring toujours coté back → donc faire attention aux frontaux
-(Il faut aussi des tests de charge pour détecter les erreurs cote front)
 
-- analyser Infra as code
 
-- tests de charge
-  ---- système ouvert fermé ?
-  ---- stress tests : how your application behaves under sudden load peak
-  ---- capacity tests : how your capacity scale
-  ----- Soak test : if your application degrades over time.
+
