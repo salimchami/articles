@@ -1,0 +1,14 @@
+body, p, h1, h2, h3, h4, h5, h6, table, thead, tbody, td, tr, article, div {
+    color: aliceblue !important;
+    background-color: #343434 !important;
+}
+
+a {
+    color: #d39191 !important;
+    background-color: #343434 !important;
+}
+
+blockquote > p {
+    color: #8c97a8 !important;
+    background-color: #343434 !important;
+}

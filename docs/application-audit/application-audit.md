@@ -706,9 +706,71 @@ Enfin, il est important de vérifier si la documentation de l'application est co
 L'évaluation porte également sur la définition des processus de maintenance et de support.
 Les éventuelles lacunes dans la documentation ou les problèmes de maintenance doivent être identifiés.
 
-### 5. Architecture logicielle -------------------
+### 5. Architecture logicielle
 
-ADR
+#### Structure logicielle
+
+Comme vu dans le paragraphe 2, la structure globale de l'application doit être évaluée, y compris les différents modules, 
+les couches logicielles et leur organisation.
+
+Il faut analyser si la structure est claire, modulaire et facilement compréhensible.
+
+#### Design patterns
+
+Les design patterns utilisés dans l'architecture logicielle doivent être identifiés.
+Il convient de vérifier si ces modèles sont appropriés pour résoudre les problèmes spécifiques
+de l'application et s'ils favorisent la maintenabilité et la réutilisabilité du code.
+
+#### Communication entre composants
+
+Les mécanismes de communication entre les différents composants de l'application, tels que les interfaces, les API et
+les services, doivent être analysés.
+Il faut vérifier si la communication est bien définie, fiable et sécurisée.
+
+#### Gestion des données
+
+La façon dont les données sont gérées dans l'application doit être évaluée.
+Il faut analyser les mécanismes d'accès aux données et les stratégies de persistance.
+Il est important de vérifier si la gestion des données est efficace et conforme aux bonnes pratiques.
+
+#### Scalabilité
+
+Il convient de vérifier si l'architecture logicielle est conçue pour être évolutive.
+Il faut analyser si elle peut gérer efficacement une augmentation de la charge de travail,
+en utilisant par exemple des techniques de mise en cache, de répartition de charge ou de mise à l'échelle horizontale.
+
+#### Séparation des préoccupations
+
+Il est important d'analyser comment les différentes préoccupations fonctionnelles et non fonctionnelles sont séparées et
+gérées dans l'architecture logicielle.
+Il faut vérifier si les responsabilités sont clairement définies et si la logique métier est séparée de la logique
+d'infrastructure.
+
+#### Extensibilité
+
+Il convient d'évaluer si l'architecture logicielle permet l'ajout de nouvelles fonctionnalités ou de nouveaux composants
+de manière modulaire et sans impact sur les fonctionnalités existantes.
+Il faut vérifier si l'architecture est flexible et ouverte à l'extension future.
+
+#### Qualité du code
+
+La qualité du code source de l'application doit être analysée.
+Il faut vérifier si les bonnes pratiques de programmation sont suivies, telles que la lisibilité, la maintenabilité,
+la modularité et l'efficacité.
+Il convient d'identifier les éventuelles violations de ces pratiques et de recommander des améliorations.
+
+#### Tests et débogage
+
+Les stratégies de test et de débogage utilisées dans l'architecture logicielle doivent être évaluées.
+Il faut analyser si des tests unitaires, des tests d'intégration et des tests de performance sont mis en place.
+Il convient de vérifier si des outils de débogage sont disponibles pour faciliter la résolution des problèmes.
+
+#### Documentation
+
+Il est important de vérifier si la documentation de l'architecture logicielle est complète et à jour.
+Il faut analyser si elle fournit des informations claires sur les choix d'architecture,
+les principaux composants et leur fonctionnement.
+Il convient d'identifier les éventuelles lacunes dans la documentation et de recommander des améliorations.
 
 ### 6. Qualité du code -------------------
 

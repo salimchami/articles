@@ -1,1 +1,7 @@
 site_name: My articles
+theme:
+  name: material
+  footer: hmlshdmflhqsmdlf
+navigation_depth: 6
+extra_css:
+  - stylesheets/extra.css
