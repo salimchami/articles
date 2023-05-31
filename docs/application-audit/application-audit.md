@@ -638,7 +638,7 @@ fonctionnelle sont également à analyser en prenant en compte leur utilité fon
 
 Les questions suivantes peuvent être posées :
 
-- Est-ce que le découpage fonctionnel est cohérent ?
+- Est-ce que le découpage fonctionnel est cohérent (sans couplage) ?
 - Est-ce que les applications sont bien nommées ?
 
 ***À analyser*** :
@@ -651,9 +651,7 @@ Les questions suivantes peuvent être posées :
 
 ### 4. Architecture technique
 
-C'est le DAT qui permet l'analyse de l'architecture technique de l'application.
-
-Voici les axes d'analyse que vous pourriez utiliser :
+C'est le DAT et le DEX qui permettent l'analyse de l'architecture technique de l'application.
 
 #### Architecture globale
 
@@ -662,12 +660,11 @@ leurs interactions et leurs dépendances, est essentielle.
 L'évaluation porte sur la conception de l'architecture, sa capacité à répondre aux besoins
 du système et sa scalabilité.
 
-#### Composants techniques
+***À analyser*** :
 
-Les descriptions détaillées des composants techniques de l'application sont examinées.
-Une analyse des fonctionnalités, des rôles et des responsabilités de chaque composant, est réalisée.
-Il convient de vérifier si les composants sont conformes aux meilleures pratiques et s'ils répondent
-aux besoins de l'application.
+- Type d'architecture : monolithique, microservices, n-tiers, SOA, EDA...
+- Interactions et dépendances entre les composants
+- Scalabilité en fonction de la volumétrie des données et du nombre d'utilisateurs
 
 #### Configuration matérielle et logicielle
 
@@ -675,11 +672,28 @@ Il est nécessaire de vérifier si les spécifications matérielles et les versi
 sont adéquates pour prendre en charge l'application.
 L'optimisation des configurations et le respect des exigences de performance et de sécurité doivent être assurés.
 
+***À analyser*** :
+
+- Spécifications matérielles
+- Versions des logiciels utilisés
+- Optimisation des configurations
+- Respect des exigences de performance et de sécurité
+
 #### Interfaces et protocoles
 
 L'évaluation porte sur les interfaces utilisées par l'application et les protocoles de communication.
 Il est important de s'assurer de leur normalisation, de leur sécurité et de leur documentation adéquate.
 La protection des interfaces externes et la mise en place de contrôles d'accès doivent être vérifiées.
+
+***À analyser*** :
+
+- Interfaces utilisées par l'application
+- Protocoles de communication
+- Normalisation des interfaces
+- Sécurité des interfaces
+- Documentation des interfaces
+- Protection des interfaces externes
+- Contrôles d'accès
 
 #### Sécurité
 
@@ -688,11 +702,25 @@ La gestion des identités, les mécanismes d'authentification, les contrôles d'
 des vulnérabilités sont examinés.
 Les éventuelles faiblesses de sécurité sont identifiées et des recommandations d'amélioration sont formulées.
 
+***À analyser*** :
+
+- Gestion des identités
+- Mécanismes d'authentification
+- Sécurisation des communications (SSL/TLS, "one way" ou "two ways" ?, autorités de certification, expiration...)
+- Gestion des vulnérabilités
+
 #### Gestion des configurations et des versions
 
 L'évaluation porte sur le processus de gestion des configurations et des versions des composants de l'application.
 Il est important de vérifier si les bonnes pratiques de contrôle de version sont suivies et si les changements
 sont correctement documentés et tracés.
+
+***À analyser*** :
+
+- Processus de gestion des configurations et des versions
+- Vérification de présence de vaults pour les secrets
+- Vérification de présence de fichiers de configuration dans le code source, les binaires, les images Docker, les
+  caches...
 
 #### Conformité réglementaire
 
@@ -700,26 +728,65 @@ Si l'application doit respecter des réglementations spécifiques (par exemple, 
 il est essentiel de vérifier sa conformité à ces exigences.
 Il convient de s'assurer que les mesures de sécurité et de protection des données sont adéquates.
 
+***À analyser*** :
+
+- Conformité aux réglementations spécifiques
+- Mesures de sécurité et de protection des données
+
 #### Documentation et maintenance
 
-Enfin, il est important de vérifier si la documentation de l'application est complète et à jour.
-L'évaluation porte également sur la définition des processus de maintenance et de support.
+Enfin, il est important de vérifier si la documentation technique de l'application est complète et à jour.
+L'évaluation porte également sur la définition des processus d'installation, de maintenance et de support (DEX).
 Les éventuelles lacunes dans la documentation ou les problèmes de maintenance doivent être identifiés.
+
+***À analyser*** :
+
+- MAJ de la Documentation technique
+- Processus d'installation, de maintenance et de support
+
+#### Scalabilité
+
+Il convient de vérifier si l'architecture logicielle est conçue pour être évolutive.
+Il faut analyser si elle peut gérer efficacement une augmentation de la charge,
+en utilisant par exemple des techniques de mise en cache, de répartition de charge ou de scalabilité horizontale.
+
+***À analyser*** :
+
+- Mise en cache
+- Répartition de charge
+- scalabilité horizontale
 
 ### 5. Architecture logicielle
 
 #### Structure logicielle
 
-Comme vu dans le paragraphe 2, la structure globale de l'application doit être évaluée, y compris les différents modules, 
-les couches logicielles et leur organisation.
+Comme vu dans le paragraphe 2, la structure globale de l'application doit être évaluée,
+y compris les couches logicielles et leur organisation.
+Il faut analyser si la structure correspond au découpage fonctionnel et si elle est modulaire et facilement
+compréhensible.
 
-Il faut analyser si la structure est claire, modulaire et facilement compréhensible.
+De plus, vérifier si le type d'architecture choisi est bien respecté
+(Architecture en couches, hexagonale, ports & adapters, CQRS, Event Sourcing, ...).
+
+***À analyser*** :
+
+- Couches logicielles
+- Organisation des couches logicielles
+- Modularité
+- Facilité de compréhension
+- Respect du type d'architecture choisi
 
 #### Design patterns
 
 Les design patterns utilisés dans l'architecture logicielle doivent être identifiés.
 Il convient de vérifier si ces modèles sont appropriés pour résoudre les problèmes spécifiques
-de l'application et s'ils favorisent la maintenabilité et la réutilisabilité du code.
+des fonctionnalités de l'application et s'ils favorisent la maintenabilité et la réutilisabilité du code.
+
+***À analyser*** :
+
+- Design patterns utilisés
+- Appropriation des design patterns
+- Maintenabilité et réutilisabilité du code
 
 #### Communication entre composants
 
@@ -727,24 +794,33 @@ Les mécanismes de communication entre les différents composants de l'applicati
 les services, doivent être analysés.
 Il faut vérifier si la communication est bien définie, fiable et sécurisée.
 
+***À analyser*** :
+
+- Mécanismes de communication entre les composants
+- Définition, fiabilité et sécurité de la communication
+
 #### Gestion des données
 
 La façon dont les données sont gérées dans l'application doit être évaluée.
-Il faut analyser les mécanismes d'accès aux données et les stratégies de persistance.
-Il est important de vérifier si la gestion des données est efficace et conforme aux bonnes pratiques.
+Il est intéressant d'analyser les mécanismes d'accès aux données et les stratégies de persistance.
 
-#### Scalabilité
-
-Il convient de vérifier si l'architecture logicielle est conçue pour être évolutive.
-Il faut analyser si elle peut gérer efficacement une augmentation de la charge de travail,
-en utilisant par exemple des techniques de mise en cache, de répartition de charge ou de mise à l'échelle horizontale.
+***À analyser*** :
+- Mécanismes d'accès aux données
+- Stratégies de persistance
+- Sécurité des données
+- Gestion des transactions, erreurs, logs, caches, secrets, messages, événements, tâches asynchrones, jobs...
 
 #### Séparation des préoccupations
 
-Il est important d'analyser comment les différentes préoccupations fonctionnelles et non fonctionnelles sont séparées et
-gérées dans l'architecture logicielle.
-Il faut vérifier si les responsabilités sont clairement définies et si la logique métier est séparée de la logique
-d'infrastructure.
+Il est important d'analyser comment les différentes responsabilités fonctionnelles et non fonctionnelles sont séparées et
+gérées dans l'application.
+Il faut également vérifier si la logique métier est séparée de la logique d'infrastructure (API, frameworks...).
+
+***À analyser*** :
+ 
+- Séparation et définition des responsabilités
+- Séparation de la logique métier et de la logique d'infrastructure
+- Cohésion et couplage
 
 #### Extensibilité
 
