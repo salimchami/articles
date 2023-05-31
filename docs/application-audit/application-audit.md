@@ -900,18 +900,7 @@ Il est important d'exploiter les résultats de cette analyse, car ils facilitent
 - Bugs potentiels
 - ...
 
-#### B.6.b. Tests automatisés
-
-Encore maintenant, en 2023, de très nombreuses applications ne contiennent malheureusement pas ou peu de tests
-automatisés.
-Il est donc important d'analyser si des tests automatisés sont mis en place, correctement écrits, et s'ils sont
-suffisants (cf. [Tests](#B5g-tests)).
-
-***À analyser*** :
-
-- Présence, pertinence et qualité (INVEST) des tests automatisés
-
-#### B.6.c. Analyse dynamique du code
+#### B.6.b. Analyse dynamique du code
 
 Ensuite, il est intéressant d'analyser la qualité du code en utilisant des outils d'analyse dynamique (APM).
 Il existe de nombreux APM sur le marché et sont largement utilisés.
@@ -931,6 +920,17 @@ L'idéal est l'exécution de tests de charge pour avoir des données suffisantes
 Par exemple, il est intéressant de vérifier le nombre de requêtes SQL exécutées dans le cadre d'une transaction web.
 Parfois, une seule et même requête, produisant le même résultat final, peut être exécutée plusieurs fois.
 Cela devrait être détecté et remonté dans l'audit.
+
+#### B.6.c. Tests automatisés
+
+Encore maintenant, en 2023, de très nombreuses applications ne contiennent malheureusement pas ou peu de tests
+automatisés.
+Il est donc important d'analyser si des tests automatisés sont mis en place, correctement écrits, et s'ils sont
+suffisants (cf. [Tests](#B5g-tests)).
+
+***À analyser*** :
+
+- Présence, pertinence et qualité (INVEST) des tests automatisés
 
 ### B.7. Sécurité
 
