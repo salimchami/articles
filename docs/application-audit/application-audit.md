@@ -922,12 +922,15 @@ Comme la majorité des applications sont des applications web, je m'intéresse u
 
 Si votre application n'est pas une application web, quelques points peuvent néanmoins être exploités.
 
-Concernant les définitions des éléments de la liste, je vous invite à consulter le site de l'[OWASP](https://owasp.org/www-project-top-ten/) 
-et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenant les actions à prendre en compte pour chaque vulnérabilité.
+Concernant les définitions des éléments de la liste, je vous invite à consulter le site de
+l'[OWASP](https://owasp.org/www-project-top-ten/)
+et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenant les actions à prendre en compte pour
+chaque vulnérabilité.
 
 ![owasp.png](owasp.png)
 
 ***À analyser*** :
+
 - Contrôle d'accès défaillants
 - Défaillance cryptographique
 - Injection
@@ -935,13 +938,13 @@ et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenan
 - Mauvaise configuration de sécurité
 - Composants vulnérables et obsolètes
 - Identification et authentification de mauvaise qualité
-- Manque d'intégrité des données et du logiciel 
+- Manque d'intégrité des données et du logiciel
 - Carence des systèmes de contrôle et de journalisation
 - Falsification de requête côté serveur
 
 ### B.8. Performance de l'application
 
-Pour mesurer la performance d'une application, il est nécessaire d'utiliser des outils 
+Pour mesurer la performance d'une application, il est nécessaire d'utiliser des outils
 de monitoring (APM) et des outils de tests de charge.
 
 #### B.8.a. APM
@@ -968,7 +971,8 @@ Cela devrait être détecté et remonté dans l'audit.
 #### B.8.b. Tests de charge
 
 Il est intéressant également de consulter ou de réaliser (s'ils n'existent pas) des tests de charge.
-Il faut tout d'abord vérifier l'existence des types de tests (vu dans le paragraphe [Tests de charge](#A6-tests-de-charge)), 
+Il faut tout d'abord vérifier l'existence des types de tests (vu dans le
+paragraphe [Tests de charge](#A6-tests-de-charge)),
 leur pertinence et leur qualité.
 
 L'étude des rapports produits par les outils de tests de charge sont à prendre en compte.
@@ -983,10 +987,11 @@ L'étude des rapports produits par les outils de tests de charge sont à prendre
 ### B.9. Impact environnemental
 
 L'impact environnemental est un sujet très important et à prendre en compte.
-Il existe des associations et organisations qui publient une série d'actions à réaliser 
+Il existe des associations et organisations qui publient une série d'actions à réaliser
 pour vérifier l'impact du logiciel sur l'environnement.
 
-Par exemple, le site [Green IT](https://www.greenit.fr/) propose une liste d'actions à réaliser lors du développement d'une application.
+Par exemple, le site [Green IT](https://www.greenit.fr/) propose une liste d'actions à réaliser lors du développement d'
+une application.
 
 Il existe également des outils analysant dynamiquement l'impact environnemental d'une application.
 Ces outils sont soit [en ligne](https://www.ecoindex.fr/), soit à installer en tant que plugin du navigateur.
@@ -994,104 +999,162 @@ Ces outils sont soit [en ligne](https://www.ecoindex.fr/), soit à installer en 
 ***À analyser*** :
 
 - Vérifier que chaque action visant à réduire l'impact écologique est respectée
- 
+
 ## C. Préconisations
 
 Une fois l'analyse effectuée, il est temps de construire les préconisations pour les reprendre dans le rapport.
 
-Les préconisations sont des actions à réaliser pour améliorer la qualité du code, de l'application, de l'architecture, etc.
+Les préconisations sont des actions à réaliser pour améliorer la qualité du code, de l'application, de l'architecture,
+etc.
 Elles sont à classer par ordre de priorité (critique, haute, moyenne, basse).
 
 Les préconisations peuvent être de différents types :
+
 - Techniques
 - Organisationnelles
 - Documentation
 - Formation
 - ...
 
-### C.1. Liste des éléments analysés
+Comme évoqué dans l'introduction, si un point positif est identifié, il peut être repris dans les préconisations afin de
+le valoriser.
 
-### C.2. Scénarios de remédiation
+**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations
+à la fin de chaque partie reprenant les préconisations de chaque point,
+pour ensuite les reprendre en synthèse dans la partie préconisations.
 
-#### C.2.a. Refactoring
+### C.1. Modèle de préconisation
 
-#### C.2.b. Refonte partielle
+Le modèle de préconisation qui est intéressant est le suivant :
 
-#### C.2.b. Refonte globale
+1. Element à améliorer
+2. Bonnes pratiques (référentiel)
+3. Préconisations
 
-### C.3. MOSCOW
+### C.2. Liste des préconisations par élément analysé
 
-#### C.3.a. Must have this (M) 
+Pour cette partie, il est possible de reprendre le même plan utilisé dans l'[analyse](#B-analyse), et pour chaque
+partie, mettre la préconisation associée.
 
-Il s'agit véritablement des points critiques, pas de question à se poser, 
-ils doivent être traités en priorité.
+### C.3. Scénarios de remédiation
+
+Les scénarios de remédiation sont des actions à réaliser pour améliorer la qualité du code, de l'application, de
+l'architecture, etc.
+Selon l'objectif, le budget alloué au projet, l'équipe de développement, etc., il est possible de proposer plusieurs
+scénarios de remédiation.
+Le rapport d'analyse doit donc contenir tous les scénarios de remédiation possibles.
+
+#### C.3.a. Correction
+
+Le scénario de correction consiste à garder l'existant et à corriger les points négatifs.
+L'équipe de développement doit être sensibilisée aux différentes pratiques de refactoring.
+
+#### C.3.b. Refonte partielle
+
+Dans ce scénario, il existe encore plusieurs scénarios possibles.
+Mais dans tous kes scénarios, il est important que les deux versions ne communiquent pas entre elles.
+
+Il est possible de diviser l'application en deux parties, en gardant le legacy et en créant une nouvelle application.
+Pour cela, il faudra orchestrer les requêtes entrantes vers la bonne application.
+
+Dans un deuxième scénario, il est possible d'intégrer la nouvelle version à l'ancienne.
+
+##### Risque
+
+Le principal risque de la refonte partielle est le fait de ne pas pouvoir se débarrasser de l'ancienne version.
+Une double architecture peut amener plus de complexité qu'auparavant.
+
+#### C.3.b. Refonte globale
+
+Si l'objectif est de refondre complètement l'application, il est possible de créer une nouvelle application et de migrer
+les données de l'ancienne vers la nouvelle.
+Ce scénario n'est pas toujours l'idéal, mais dépend fortement du contexte du projet.
+
+### C.4. MOSCOW
+
+MoSCoW est une technique de priorisation des exigences.
+Elle permet de classer les exigences en fonction de leur importance et de leur urgence.
+
+#### C.4.a. Must have this (M)
+
+Il s'agit véritablement des points critiques, pas de question à se poser, ils doivent être traités en priorité.
 Ces exigences sont, en effet, non négociables.
 
-#### C.3.b. Should have this if at all possible (S)
+#### C.4.b. Should have this if at all possible (S)
 
-Ces points apportent une vraie valeur ajoutée et/ou leur importance contribue à l'atteinte des objectifs. 
-La différence avec les "*Must Have*" réside souvent dans le fait que leur traitement peut être différé 
+Ces points apportent une vraie valeur ajoutée et/ou leur importance contribue à l'atteinte des objectifs.
+La différence avec les "*Must Have*" réside souvent dans le fait que leur traitement peut être différé
 dans le temps après celui des points prioritaires.
-Dans ce cas, leur classement est assimilable à la case "*Important, mais non urgent*" 
-de la matrice importance-urgence.
+
+Dans ce cas, leur classement est assimilable à la case "*Important, mais non urgent*" de la matrice importance-urgence.
 Et doivent ainsi être traités dans la mesure du possible.
 
-#### C.3.c. Could have this if it does not affect anything else (C)
+#### C.4.c. Could have this if it does not affect anything else (C)
 
-Bien de les avoir, peuvent être retirés des priorités si des choix doivent être faits. 
-Généralement, ils font partie des "petits plus" qui contribuent à la satisfaction client 
-pour un coût très modéré.
-Des exigences additionnelles de confort.
+Bien de les avoir, peuvent être retirés des priorités si des choix doivent être faits.
+Généralement, ils font partie des "petits plus" qui contribuent à la satisfaction client pour un coût très modéré.
+Ce sont donc des exigences additionnelles de confort.
 
-#### C.3.d. Won't have this time but would like in the future (W) 
+#### C.4.d. Won't have this time but would like in the future (W)
 
-Ils sont exclus du projet, mais font partie des points qui restent dans les cartons pour un 
+Ils sont exclus du projet, mais font partie des points qui restent dans les cartons pour un
 traitement ou une intégration ultérieure.
 
-#### C.3.e. Exemple
+#### C.4.e. Exemple
 
-| M | S | C | W |
-|---|---|---|---|
-|   |   |   |   |
-
+| M                                                                           | S                                                                                      | C                                                         | W                                                                         |
+|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------|-----------------------------------------------------------|---------------------------------------------------------------------------|
+| Suppression des communications bidirectionnelles entre deux applications    | Suppression du pattern d'états (State pattern) car trop complexe pour le besoin actuel | Amélioration de la gestion d'erreurs (exceptions et logs) | Remplacement de l'architecture en couches par une architecture hexagonale |
+| Correction des anomalies détectées par SonarQube (bugs, code smells...)     |                                                                                        |                                                           |                                                                           |
+| Déplacement de toutes les règles de gestion dans la couche métier (domaine) |                                                                                        |                                                           |                                                                           |
 
 ## D. Rapport
 
-**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations 
-à la fin de chaque partie reprenant les préconisations de chaque point, 
-pour ensuite les reprendre en synthèse dans la partie préconisations.
+Une fois l'analyse effectuée et les préconisations déduites de l'analyse, il est temps de rédiger le rapport.
+Le rapport peut contenir le plan suivant :
 
-TODO: Ajouter à l'analyse : 
-icônes : 
-- positif
-- négatif
-- référentiel
-- préconisation
+1. Introduction et présentation du projet et de l'objectif de l'audit
+2. Outils et référentiels utilisés
+3. Organisation
+4. Structure globale de l'application
+5. Architecture fonctionnelle
+6. Architecture technique
+7. Architecture logicielle
+8. Qualité du code
+9. Sécurité
+10. Performance de l'application
+11. Impact environnemental
+12. Préconisations et plans de remédiation
 
+Ce plan est, bien entendu, à adapter à chaque contexte de projet et de besoin.
 
+Par ailleurs, selon la personne lisant le rapport, il est possible que plusieurs parties ne soient pas lues.
+Par exemple, un manager va directement aller à la partie "Préconisations et plans de remédiation" pour connaître les
+actions à réaliser.
 
 ## E. Take away
 
-### E.1 Pré-requis (outils utilisés) 
+### Pré-requis (outils utilisés)
 
-Tableau contenant le lien vers les outils utilisés pour l'audit (prérequis).  
+Tableau contenant le lien vers les outils utilisés pour l'audit.  
 Vous pouvez le réutiliser et mettre vos propres informations (urls, chemin répertoire local, login, mot de passe...).
 
-| Libellé          | Url                                   | Local file Path                           | Login | Password |  
-|------------------|---------------------------------------|-------------------------------------------|-------|----------|
-| Gestion Tickets  |                                       |                                           |       |          |
-| Wiki             | ex: https://mycompany.com/wiki        | X                                         |       |          |
-| DAT              | ex: https://mycompany.com/project/dat | ex: /home/me/project/architecture/DAT.pdf |       |          |
-| DEX              |                                       |                                           |       |          |
-| CI/CD            |                                       |                                           |       |          |
-| Rapports Gatling |                                       |                                           |       |          |
-| Monitoring       |                                       |                                           |       |          |
-| APM              |                                       |                                           |       |          |
-| GIT              |                                       |                                           |       |          |
-| Logs             |                                       |                                           |       |          |
-
-[//]: <> (TODO: Analyse de logs de l'application (remontée sur Kibana par exemple))
-
-### E.2 MOSCOW
+| Libellé                 | Url                                   | Local file Path                           | Login | Password |  
+|-------------------------|---------------------------------------|-------------------------------------------|-------|----------|
+| Gestionnaire de Tickets |                                       |                                           |       |          |
+| Wiki                    | ex: https://mycompany.com/wiki        |                                           |       |          |
+| DAT                     | ex: https://mycompany.com/project/dat | ex: /home/me/project/architecture/DAT.pdf |       |          |
+| DEX                     |                                       |                                           |       |          |
+| CI/CD                   |                                       |                                           |       |          |
+| Rapports Gatling        |                                       |                                           |       |          |
+| Monitoring              |                                       |                                           |       |          |
+| APM                     |                                       |                                           |       |          |
+| SonarQube               |                                       |                                           |       |          |
+| Repository artifacts    |                                       |                                           |       |          |
+| Repository GIT          |                                       |                                           |       |          |
+| VM DEV                  |                                       |                                           |       |          |
+| VM Staging              |                                       |                                           |       |          |
+| VM PROD                 |                                       |                                           |       |          |
+| Logs                    |                                       |                                           |       |          |
 
 
