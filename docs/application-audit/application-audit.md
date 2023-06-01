@@ -1002,15 +1002,16 @@ Les préconisations sont des actions à réaliser pour améliorer la qualité du
 Elles sont à classer par ordre de priorité (critique, haute, moyenne, basse).
 
 Les préconisations peuvent être de différents types :
-- Technique
-- Organisationnelle
-- Processus
+- Techniques
+- Organisationnelles
 - Documentation
 - Formation
 - ...
 
 **N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie, 
 pour ensuite les reprendre en détail dans la partie préconisations. 
+
+
 
 ## D. Rapport -------------------
 
