@@ -900,9 +900,40 @@ Il est important d'exploiter les résultats de cette analyse, car ils facilitent
 - Bugs potentiels
 - ...
 
-#### B.6.b. Analyse dynamique du code
+#### B.6.b. Tests automatisés
 
-Ensuite, il est intéressant d'analyser la qualité du code en utilisant des outils d'analyse dynamique (APM).
+Encore maintenant, en 2023, de très nombreuses applications ne contiennent malheureusement pas ou peu de tests
+automatisés.
+Il est donc important d'analyser si des tests automatisés sont mis en place, correctement écrits, et s'ils sont
+suffisants (cf. [Tests](#B5g-tests)).
+
+***À analyser*** :
+
+- Présence, pertinence et qualité (INVEST) des tests automatisés
+
+### B.7. Sécurité
+
+Il existe plusieurs référentiels de sécurité, mais le plus connu est celui de l'[OWASP](https://owasp.org/) (Open Web
+Application Security Project)
+qui fournit une liste des 10 risques de sécurité les plus critiques pour les applications web.
+
+Comme la majorité des applications sont des applications web, je m'intéresse uniquement à ce référentiel.
+
+Si votre application n'est pas une application web, quelques points peuvent néanmoins être exploités.
+
+Concernant les définitions des éléments de la liste, je vous invite à consulter le site de l'[OWASP](https://owasp.org/www-project-top-ten/) 
+et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenant les actions à prendre pour chaque vulnérabilité.
+
+![owasp.png](owasp.png)
+
+### B.8. Performance de l'application
+
+Pour mesurer la performance d'une application, il est nécessaire d'utiliser des outils 
+de monitoring (APM) et des outils de tests de charge.
+
+#### B.8.a. APM
+
+Il est intéressant d'analyser la qualité du code en utilisant des outils d'analyse dynamique (APM).
 Il existe de nombreux APM sur le marché et sont largement utilisés.
 
 Si ce n'est pas le cas, il est possible d'utiliser des outils open source, légers et simples d'utilisation.  
@@ -921,20 +952,7 @@ Par exemple, il est intéressant de vérifier le nombre de requêtes SQL exécut
 Parfois, une seule et même requête, produisant le même résultat final, peut être exécutée plusieurs fois.
 Cela devrait être détecté et remonté dans l'audit.
 
-#### B.6.c. Tests automatisés
-
-Encore maintenant, en 2023, de très nombreuses applications ne contiennent malheureusement pas ou peu de tests
-automatisés.
-Il est donc important d'analyser si des tests automatisés sont mis en place, correctement écrits, et s'ils sont
-suffisants (cf. [Tests](#B5g-tests)).
-
-***À analyser*** :
-
-- Présence, pertinence et qualité (INVEST) des tests automatisés
-
-### B.7. Sécurité
-
-### B.8. Performance de l'application -------------------
+#### B.8.b. Tests de charge
 
 cf. [Tests de charge](#A6-tests-de-charge)
 
@@ -962,9 +980,7 @@ Vous pouvez le réutiliser et mettre vos propres informations (urls, chemin rép
 | GIT              |                                       |                                           |       |          |
 | Logs             |                                       |                                           |       |          |
 
-## TODO
-
-Analyse de logs de l'application (remontée sur Kibana par exemple)
+[//]: <> (TODO: Analyse de logs de l'application (remontée sur Kibana par exemple))
 
 
 
