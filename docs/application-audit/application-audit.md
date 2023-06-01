@@ -922,9 +922,21 @@ Comme la majorité des applications sont des applications web, je m'intéresse u
 Si votre application n'est pas une application web, quelques points peuvent néanmoins être exploités.
 
 Concernant les définitions des éléments de la liste, je vous invite à consulter le site de l'[OWASP](https://owasp.org/www-project-top-ten/) 
-et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenant les actions à prendre pour chaque vulnérabilité.
+et spécifiquement le repo [Github](https://github.com/OWASP/Top10.git) contenant les actions à prendre en compte pour chaque vulnérabilité.
 
 ![owasp.png](owasp.png)
+
+***À analyser*** :
+- Contrôle d'accès défaillants
+- Défaillance cryptographique
+- Injection
+- Conception non sécurisée
+- Mauvaise configuration de sécurité
+- Composants vulnérables et obsolètes
+- Identification et authentification de mauvaise qualité
+- Manque d'intégrité des données et du logiciel 
+- Carence des systèmes de contrôle et de journalisation
+- Falsification de requête côté serveur
 
 ### B.8. Performance de l'application
 
@@ -954,11 +966,51 @@ Cela devrait être détecté et remonté dans l'audit.
 
 #### B.8.b. Tests de charge
 
-cf. [Tests de charge](#A6-tests-de-charge)
+Il est intéressant également de consulter ou de réaliser (s'ils n'existent pas) des tests de charge.
+Il faut tout d'abord vérifier l'existence des types de tests (vu dans le paragraphe [Tests de charge](#A6-tests-de-charge)), 
+leur pertinence et leur qualité.
 
-### B.9. Impact environnemental -------------------
+L'étude des rapports produits par les outils de tests de charge sont à prendre en compte.
 
-## C. Préconisations -------------------
+***À analyser*** :
+
+- Présence des différents types de tests de charge
+- Temps de réponse
+- Durées d'exécution des méthodes, requêtes, transactions...
+- Nombre de requêtes, erreurs, logs, messages, événements...
+
+### B.9. Impact environnemental
+
+L'impact environnemental est un sujet très important et à prendre en compte.
+Il existe des associations et organisations qui publient une série d'actions à réaliser 
+pour vérifier l'impact du logiciel sur l'environnement.
+
+Par exemple, le site [Green IT](https://www.greenit.fr/) propose une liste d'actions à réaliser lors du développement d'une application.
+
+Il existe également des outils analysant dynamiquement l'impact environnemental d'une application.
+Ces outils sont soit [en ligne](https://www.ecoindex.fr/), soit à installer en tant que plugin du navigateur.
+
+***À analyser*** :
+
+- Vérifier que chaque action visant à réduire l'impact écologique est respectée
+ 
+## C. Préconisations
+
+Une fois l'analyse effectuée, il est temps de rédiger les préconisations.
+
+Les préconisations sont des actions à réaliser pour améliorer la qualité du code, de l'application, de l'architecture, etc.
+Elles sont à classer par ordre de priorité (critique, haute, moyenne, basse).
+
+Les préconisations peuvent être de différents types :
+- Technique
+- Organisationnelle
+- Processus
+- Documentation
+- Formation
+- ...
+
+**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie, 
+pour ensuite les reprendre en détail dans la partie préconisations. 
 
 ## D. Rapport -------------------
 
