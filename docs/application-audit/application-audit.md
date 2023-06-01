@@ -1024,17 +1024,15 @@ Les préconisations peuvent être de différents types :
 #### C.3.a. Must have this (M) 
 
 Il s'agit véritablement des points critiques, pas de question à se poser, 
-ils doivent doit être traités en priorité.
-Dans le cas contraire, le succès du projet en souffrira et mènera à son échec. 
-
-Ces exigences sont non négociables.
+ils doivent être traités en priorité.
+Ces exigences sont, en effet, non négociables.
 
 #### C.3.b. Should have this if at all possible (S)
 
 Ces points apportent une vraie valeur ajoutée et/ou leur importance contribue à l'atteinte des objectifs. 
 La différence avec les "*Must Have*" réside souvent dans le fait que leur traitement peut être différé 
 dans le temps après celui des points prioritaires.
-Dans ce cas, leur classement est assimilable à la case  " Important, mais non urgent " 
+Dans ce cas, leur classement est assimilable à la case "*Important, mais non urgent*" 
 de la matrice importance-urgence.
 Et doivent ainsi être traités dans la mesure du possible.
 
@@ -1049,6 +1047,13 @@ Des exigences additionnelles de confort.
 
 Ils sont exclus du projet, mais font partie des points qui restent dans les cartons pour un 
 traitement ou une intégration ultérieure.
+
+#### C.3.e. Exemple
+
+| M | S | C | W |
+|---|---|---|---|
+|   |   |   |   |
+
 
 ## D. Rapport
 
