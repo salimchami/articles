@@ -377,18 +377,19 @@ de projet (Point 1), et une deuxième partie technique.
 
 Un des objectifs supplémentaires sur lequel l'étude peut porter est l'impact environnemental de l'application.
 
-1. Organisation et TTM
-2. Structure globale de l'application
-3. Architecture Technique
-4. Architecture logicielle
-5. Qualité du code
-6. Sécurité
-7. Performance de l'application
-8. Impact environnemental
+1. [Organisation et TTM](#b1-organisation-et-time-to-market-ttm)
+2. [Structure globale de l'application](#b2-structure-globale-de-lapplication)
+3. [Architecture fonctionnelle](#b3-architecture-fonctionnelle)
+4. [Architecture technique](#b4-architecture-technique)
+5. [Architecture logicielle](#b5-architecture-logicielle)
+6. [Qualité du code](#b6-qualité-du-code)
+7. [Sécurité](#b7-sécurité)
+8. [Performance de l'application](#b8-performance-de-lapplication)
+9. [Impact environnemental](#b9-impact-environnemental)
 
 **N.B.** : Dans les parties ci-après, je ne parle principalement que de **points négatifs**,
 mais il est bien entendu pertinent et nécessaire de noter les **points positifs** pour les prendre en compte dans les
-préconisations et le rapport, car un audit est une photographie factuelle d'une application à un instant T.
+préconisations et le rapport, car un audit est **une photographie factuelle d'une application à un instant T**.
 
 ### B.1. Organisation et Time To Market (TTM)
 
@@ -996,7 +997,7 @@ Ces outils sont soit [en ligne](https://www.ecoindex.fr/), soit à installer en 
  
 ## C. Préconisations
 
-Une fois l'analyse effectuée, il est temps de rédiger les préconisations.
+Une fois l'analyse effectuée, il est temps de construire les préconisations pour les reprendre dans le rapport.
 
 Les préconisations sont des actions à réaliser pour améliorer la qualité du code, de l'application, de l'architecture, etc.
 Elles sont à classer par ordre de priorité (critique, haute, moyenne, basse).
@@ -1008,14 +1009,34 @@ Les préconisations peuvent être de différents types :
 - Formation
 - ...
 
-**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie, 
-pour ensuite les reprendre en détail dans la partie préconisations. 
+### C.1 Liste des éléments analysés
+
+### C.2 Scénarios de remédiation
+
+#### C.2.a Refactoring
+
+#### C.2.b Refonte partielle
+
+#### C.2.b Refonte globale
+
+### C.3 MOSCOW
+
+## D. Rapport
+
+**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie reprenant les préconisations de chaque point, 
+pour ensuite les reprendre en synthèse dans la partie préconisations.
+
+icônes : 
+- positif
+- négatif
+- référentiel
+- préconisation
 
 
 
-## D. Rapport -------------------
+## E. Take away
 
-## E. Take away -------------------
+### E.1 Pré-requis (outils utilisés) 
 
 Tableau contenant le lien vers les outils utilisés pour l'audit (prérequis).  
 Vous pouvez le réutiliser et mettre vos propres informations (urls, chemin répertoire local, login, mot de passe...).
@@ -1035,6 +1056,6 @@ Vous pouvez le réutiliser et mettre vos propres informations (urls, chemin rép
 
 [//]: <> (TODO: Analyse de logs de l'application (remontée sur Kibana par exemple))
 
-
+### E.2 MOSCOW
 
 
