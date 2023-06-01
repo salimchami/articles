@@ -1009,21 +1009,51 @@ Les préconisations peuvent être de différents types :
 - Formation
 - ...
 
-### C.1 Liste des éléments analysés
+### C.1. Liste des éléments analysés
 
-### C.2 Scénarios de remédiation
+### C.2. Scénarios de remédiation
 
-#### C.2.a Refactoring
+#### C.2.a. Refactoring
 
-#### C.2.b Refonte partielle
+#### C.2.b. Refonte partielle
 
-#### C.2.b Refonte globale
+#### C.2.b. Refonte globale
 
-### C.3 MOSCOW
+### C.3. MOSCOW
+
+#### C.3.a. Must have this (M) 
+
+Il s'agit véritablement des points critiques, pas de question à se poser, 
+ils doivent doit être traités en priorité.
+Dans le cas contraire, le succès du projet en souffrira et mènera à son échec. 
+
+Ces exigences sont non négociables.
+
+#### C.3.b. Should have this if at all possible (S)
+
+Ces points apportent une vraie valeur ajoutée et/ou leur importance contribue à l'atteinte des objectifs. 
+La différence avec les "*Must Have*" réside souvent dans le fait que leur traitement peut être différé 
+dans le temps après celui des points prioritaires.
+Dans ce cas, leur classement est assimilable à la case  " Important, mais non urgent " 
+de la matrice importance-urgence.
+Et doivent ainsi être traités dans la mesure du possible.
+
+#### C.3.c. Could have this if it does not affect anything else (C)
+
+Bien de les avoir, peuvent être retirés des priorités si des choix doivent être faits. 
+Généralement, ils font partie des "petits plus" qui contribuent à la satisfaction client 
+pour un coût très modéré.
+Des exigences additionnelles de confort.
+
+#### C.3.d. Won't have this time but would like in the future (W) 
+
+Ils sont exclus du projet, mais font partie des points qui restent dans les cartons pour un 
+traitement ou une intégration ultérieure.
 
 ## D. Rapport
 
-**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie reprenant les préconisations de chaque point, 
+**N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations 
+à la fin de chaque partie reprenant les préconisations de chaque point, 
 pour ensuite les reprendre en synthèse dans la partie préconisations.
 
 TODO: Ajouter à l'analyse : 
