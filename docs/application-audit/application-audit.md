@@ -1026,6 +1026,7 @@ Les préconisations peuvent être de différents types :
 **N.B.** : Lors de la rédaction de l'analyse, il est utile de créer un paragraphe de préconisations à la fin de chaque partie reprenant les préconisations de chaque point, 
 pour ensuite les reprendre en synthèse dans la partie préconisations.
 
+TODO: Ajouter à l'analyse : 
 icônes : 
 - positif
 - négatif
