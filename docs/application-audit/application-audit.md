@@ -1052,7 +1052,7 @@ L'équipe de développement doit être sensibilisée aux différentes pratiques 
 #### C.3.b. Refonte partielle
 
 Dans ce scénario, il existe encore plusieurs scénarios possibles.
-Mais dans tous kes scénarios, il est important que les deux versions ne communiquent pas entre elles.
+Mais dans tous les scénarios, il est important que les deux versions ne communiquent pas entre elles.
 
 Il est possible de diviser l'application en deux parties, en gardant le legacy et en créant une nouvelle application.
 Pour cela, il faudra orchestrer les requêtes entrantes vers la bonne application.
