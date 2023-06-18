@@ -1091,7 +1091,7 @@ Et doivent ainsi être traités dans la mesure du possible.
 
 #### C.4.c. Could have this if it does not affect anything else (C)
 
-Bien de les avoir, peuvent être retirés des priorités si des choix doivent être faits.
+Il est bien de les avoir et peuvent être retirés des priorités si des choix doivent être faits.
 Généralement, ils font partie des "petits plus" qui contribuent à la satisfaction client pour un coût très modéré.
 Ce sont donc des exigences additionnelles de confort.
 
