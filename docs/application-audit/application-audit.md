@@ -1,16 +1,6 @@
 # Audit d'application
 
-Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (30 mn de lecture).
-Les managers, les PM/PO considèrent le logiciel comme une boîte noire.
-Et en tant qu'auditeur, nous devons également les aider à éclaircir les processus de développement.
-Par ailleurs, si un audit est réalisé sur une application, l'équipe de dév devrait être la première dans la boucle, et
-doit avoir le recul nécessaire pour accepter cet audit.
-Si ce n'est-elle qui en fait la demande.
-
-Dans cet article, je vais tenter d'expliquer ce qu'est un audit applicatif en exposant tous les aspects devant être pris
-en compte pour le réaliser et pour écrire un compte rendu.
-
-Cette fiction peut être bien réelle dans les entreprises.
+><i>Article écrit par Salim CHAMI [@salimchami](https://github.com/salimchami/) (30 mn de lecture).</i>
 
 > **Mon Manager N+3 Laure** : "Salut ! tu voudrais faire l'audit de code d'une application ?"  
 **Moi** : "Salut Laure ! quels problèmes ils ont ?"  
@@ -68,6 +58,15 @@ Je change d'onglet et contacte Rémy pour lui demander des explications supplém
 > Un audit sans parler à l'équipe de dév...
 > Comme quand on interdit au développeur de contacter le PO..."
 
+Cette fiction peut être bien réelle dans les entreprises.
+Les managers, les PM/PO considèrent le logiciel comme une boîte noire.
+Et en tant qu'auditeur, nous devons également les aider à éclaircir les processus de développement.
+Par ailleurs, si un audit est réalisé sur une application, l'équipe de dév devrait être la première dans la boucle, et
+doit avoir le recul nécessaire pour accepter cet audit.
+Si ce n'est-elle qui en fait la demande.
+
+Dans cet article, je vais tenter d'expliquer ce qu'est un audit applicatif en exposant tous les aspects devant être pris
+en compte pour le réaliser et pour écrire un compte rendu.
 
 ## L'élément déclencheur
 
