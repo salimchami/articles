@@ -871,8 +871,8 @@ Il convient d'identifier les éventuelles lacunes dans la documentation et de re
 ### B.6. Qualité du code
 
 En filigrane de l'analyse du code, l'idéal est d'avoir comme référentiel les nombreux livres écrits à ce sujet.
-Le premier, et le plus connu, est celui de *Robert C. Martin* : "*Clean Code*".
-Je ne vais pas lister les différents éléments énoncés dans ces livres (naming, commentaires, couplage, tests...),
+Le premier est celui de *Robert C. Martin* : "*Clean Code*".
+Je ne vais pas lister les différents éléments énoncés dans ces livres (design, naming, commentaires, couplage, tests...),
 mais plutôt les techniques à utiliser.
 
 #### B.6.a. Design
@@ -882,8 +882,9 @@ nécessaire de se poser les questions suivantes :
 
 - Est-ce que le modèle des objets utilisés est anémique (cf. DDD tactique) ?
 - Les "bonded contexts" sont-ils bien identifiés et définis ?
-- Un langage ubiquitaire (Ubiquitous langage) est-il utilisé dans chaque bounded context ? 
+- Un langage ubiquitaire (Ubiquitous langage) est-il utilisé dans chaque bounded context correspondant ? 
 - Les cas d'utilisations sont-ils bien clairs, compréhensibles et facilement déductibles depuis le code ? 
+- ...
 
 #### B.6.b. Analyse statique du code
 
